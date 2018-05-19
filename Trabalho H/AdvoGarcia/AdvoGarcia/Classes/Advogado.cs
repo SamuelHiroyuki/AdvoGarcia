@@ -21,14 +21,15 @@ namespace AdvoGarcia.Classes
         public string Foto { get; set; }
         public int QtdCasos { get; set; }
         public int PrecoHR { get; set; }
+        public string Area { get; set; }
         public int Id_Caso { get; set; }
 
         public void Cadastrar() {
             SqlConnection cn = Conexao.conectar();
             SqlCommand cmd = cn.CreateCommand();
 
-            cmd.CommandText = "insert into tbAdvogado(Nome_Adv, End_Adv, Email_Adv, Foto_Adv, User_Adv, Pass_Adv, CPF_Adv, Tel_Adv, QtdCasos, PrecoHR)" +
-                "values (@nome, @end, @email, @foto, @user, @pass, @cpf, @tel, @qtd, @prec)";
+            cmd.CommandText = "insert into tbAdvogado(Nome_Adv, End_Adv, Email_Adv, Foto_Adv, User_Adv, Pass_Adv, CPF_Adv, Tel_Adv, QtdCasos, PrecoHR, Area)" +
+                "values (@nome, @end, @email, @foto, @user, @pass, @cpf, @tel, @qtd, @prec, @area)";
 
             cmd.Parameters.Add("@nome", SqlDbType.VarChar, 50).Value = this.Nome;
             cmd.Parameters.Add("@end", SqlDbType.VarChar, 50).Value = this.Endereco;
@@ -40,6 +41,7 @@ namespace AdvoGarcia.Classes
             cmd.Parameters.Add("@cpf", SqlDbType.VarChar, 14).Value = this.CPF;
             cmd.Parameters.Add("@qtd", SqlDbType.Int).Value = this.QtdCasos;
             cmd.Parameters.Add("@prec", SqlDbType.Int).Value = this.PrecoHR;
+            cmd.Parameters.Add("@area", SqlDbType.VarChar, 50).Value = this.Area;
 
             cmd.ExecuteNonQuery();
             cn.Close();
@@ -67,6 +69,7 @@ namespace AdvoGarcia.Classes
                 this.Foto = dr[4].ToString();
                 this.QtdCasos = (int)dr[9];
                 this.PrecoHR = (int)dr[10];
+                this.Area = dr[11].ToString();
                 try{ this.Id_Caso = (int)dr["Id_Caso"]; }
                 catch (Exception){}
                 return true;

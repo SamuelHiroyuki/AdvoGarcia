@@ -379,6 +379,11 @@ namespace AdvoGarcia.Telas
             copyImgToFolder();
         }
 
+        private void btnReCli_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //
         //-------------------------------Consulta-------------------------------
         //

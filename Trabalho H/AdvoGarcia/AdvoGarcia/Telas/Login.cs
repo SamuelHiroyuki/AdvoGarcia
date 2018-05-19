@@ -21,35 +21,44 @@ namespace AdvoGarcia.Telas
             InitializeComponent();
         }
 
+        //Fecha a aplicação
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        //Botão de logar
         private void btnLogar_Click(object sender, EventArgs e)
         {
-            a = new Advogado() { User = txtUser.Text, Pass = txtPass.Text };
-            c = new Cliente() { User = txtUser.Text, Pass = txtPass.Text };
-            
-            if (a.Verificar())
+            if (txtUser.Text.Equals(string.Empty) || txtPass.Text.Equals(string.Empty))
             {
-                MessageBox.Show(a.Nome, "Adv");
-                this.Hide();
-                frmMain main = new frmMain(a);
-                main.ShowDialog();
+                MessageBox.Show("Preencha todos os campos!", "Atenção");
             }
             else
             {
-                if (c.Verificar())
+                a = new Advogado() { User = txtUser.Text, Pass = txtPass.Text };
+                c = new Cliente() { User = txtUser.Text, Pass = txtPass.Text };
+
+                if (a.Verificar())
                 {
-                    MessageBox.Show(c.Nome + c.Caso.Id.ToString(), "Cli");
+                    MessageBox.Show(a.Nome, "Adv");
                     this.Hide();
-                    frmMain main = new frmMain(c);
+                    frmMain main = new frmMain(a);
                     main.ShowDialog();
                 }
                 else
                 {
-                    MessageBox.Show("LIXO", "EEEEEEEE");
+                    if (c.Verificar())
+                    {
+                        MessageBox.Show(c.Nome + c.Caso.Id.ToString(), "Cli");
+                        this.Hide();
+                        frmMain main = new frmMain(c);
+                        main.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("LIXO", "EEEEEEEE");
+                    }
                 }
             }
         }
