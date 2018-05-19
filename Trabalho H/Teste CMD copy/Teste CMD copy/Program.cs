@@ -12,22 +12,27 @@ namespace Teste_CMD_copy
         {
             string nomev = string.Empty;
             int i = 0;
+
             Console.WriteLine("Digite um arquivo para copiar: ");
             string nome = Console.ReadLine();
             nome = nome + ".jpg";
+
             string sourcePath = @"C:\Users\samhi\Dropbox\D&D\Personagens\Lilliana\Imagens\Lilliana";
             string targetPath = @"C:\Users\samhi\Desktop";
+
             string sourceFile = System.IO.Path.Combine(sourcePath, nome);
-            string destFile = System.IO.Path.Combine(targetPath, nome);
+            string nom = (i).ToString() + ".jpg";
+            string destFile = System.IO.Path.Combine(targetPath, nom);
+
             do
             {
-                if (System.IO.File.Exists(@"C:\Users\samhi\Desktop\" + nome))
+                if (System.IO.File.Exists(@"C:\Users\samhi\Desktop\" + nom))
                 {
-                    nomev = (i).ToString() + ".jpg";
+                    nomev = (i++).ToString() + ".jpg";
                     destFile = System.IO.Path.Combine(targetPath, nomev);
                 }
-                i++;
             } while (System.IO.File.Exists(@"C:\Users\samhi\Desktop\" + nomev));
+
             System.IO.File.Copy(sourceFile, destFile, true);
 
         }
