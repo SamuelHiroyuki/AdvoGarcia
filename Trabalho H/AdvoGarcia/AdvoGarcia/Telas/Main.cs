@@ -13,40 +13,21 @@ namespace AdvoGarcia.Telas
 {
     public partial class frmMain : Form
     {
+        //-------------------------------//-------------------------------//-------------------------------//-------------------------------
         int i = 0;
         string fileName;
         OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG|*.jpg", ValidateNames = true, Multiselect = false };
         Cliente atualc, clidoadv;
         Advogado atuala, advdocli;
         Caso casoadv;
+        //-------------------------------//-------------------------------//-------------------------------//-------------------------------
 
         public frmMain(Advogado aa)
         {
             atuala = aa;
             InitializeComponent();
-            try { picPerf.BackgroundImage = Image.FromFile(atuala.Foto); }
-            catch (Exception){ picPerf.BackColor = Color.Black; }
-            lblNome.Text = atuala.Nome;
-            lblIDAdv.Text = atuala.Id.ToString();
-            if (atuala.Id_Caso != 0){ btnSelCaso.Enabled = false; }
-            else{ btnEncerrar.Enabled = false; }
-            try
-            {
-                casoadv = new Caso();
-                casoadv = casoadv.PegaID(atuala.Id_Caso);
-                txtCasoAdv.Text = casoadv.Descricao.ToString();
-                clidoadv = new Cliente();
-                clidoadv.PegaIdCaso(casoadv.Id);
-                lblIDCli.Text = clidoadv.Id.ToString();
-                lblNomeCli.Text = clidoadv.Nome;
-                lblEndCli.Text = clidoadv.Endereco;
-                lblEmailCli.Text = clidoadv.Email;
-                lblTelCli.Text = clidoadv.Telefone;
-            }
-            catch (Exception){}
-            try { picCliadv.BackgroundImage = Image.FromFile(clidoadv.Foto); }
-            catch (Exception) { picCliadv.BackColor = Color.Black; }
             tabControl.SelectedIndex = 1;
+            attadv();
             cboFormP.Items.Add("Cheque");
             cboFormP.Items.Add("Cartão de Crédito");
             cboFormP.Items.Add("Cartão de Débito");
@@ -169,27 +150,42 @@ namespace AdvoGarcia.Telas
 
         private void btnSaveA_Click(object sender, EventArgs e)
         {
-            Advogado a = new Advogado();
-            a.Nome = txtCNomeA.Text;
-            a.Endereco = txtCEndA.Text;
-            a.Telefone = txtCTelA.Text;
-            a.Email = txtCEmailA.Text;
-            a.CPF = txtCCPFA.Text;
-            a.User = txtCUserA.Text;
-            a.Pass = txtCPassA.Text;
-            a.PrecoHR = Convert.ToInt32(nudCPrecA.Value);
-            a.QtdCasos = Convert.ToInt32(nudCQtdCA.Value);
-            a.Foto = copyImgToFolder();
-            if (a.Confirmar())
+            if (!(txtCNomeA.Text.Equals(string.Empty) || txtCEndA.Text.Equals(string.Empty) || txtCTelA.Text.Equals(string.Empty) || 
+                (txtCEmailA.Text.Equals(string.Empty) || !txtCEmailA.Text.Contains("@")) || txtCCPFA.Text.Equals(string.Empty) || txtCUserA.Text.Equals(string.Empty) || 
+                txtCPassA.Text.Equals(string.Empty) || nudCPrecA.Value == 0 || 
+                (rdbCDC.Checked == false && rdbCDT.Checked == false && rdbCMed.Checked == false) || fileName.Equals(null)))
             {
-                MessageBox.Show("Já existe", "Atenção");
+                Advogado a = new Advogado();
+                a.Nome = txtCNomeA.Text;
+                a.Endereco = txtCEndA.Text;
+                a.Telefone = txtCTelA.Text;
+                a.Email = txtCEmailA.Text;
+                a.CPF = txtCCPFA.Text;
+                a.User = txtCUserA.Text;
+                a.Pass = txtCPassA.Text;
+                a.PrecoHR = Convert.ToInt32(nudCPrecA.Value);
+                a.QtdCasos = Convert.ToInt32(nudCQtdCA.Value);
+                a.Foto = copyImgToFolder();
+
+                if (rdbCDC.Checked){ a.Area = "Direito Civil"; } else{
+                    if (rdbCDT.Checked){ a.Area = "Direito Trabalhista"; }
+                        else{ a.Area = "Mediação"; } }
+
+                if (a.Confirmar())
+                {
+                    MessageBox.Show("Já existe no contexto.", "Atenção");
+                }
+                else
+                {
+                    a.Cadastrar();
+                    MessageBox.Show("Advogado cadastrado", "Sucesso");
+                    limpar();
+                    a = null;
+                }
             }
             else
             {
-                a.Cadastrar();
-                MessageBox.Show("Advogado cadastrado", "Sucesso");
-                limpar();
-                a = null;
+                MessageBox.Show("Preencha todos os campos!", "Atenção");
             }
         }
 
@@ -239,20 +235,36 @@ namespace AdvoGarcia.Telas
 
         private void btnASaveA_Click(object sender, EventArgs e)
         {
-            atuala.Nome = txtCNomeA.Text;
-            atuala.Endereco = txtCEndA.Text;
-            atuala.Telefone = txtCTelA.Text;
-            atuala.Email = txtCEmailA.Text;
-            atuala.CPF = txtCCPFA.Text;
-            atuala.User = txtCUserA.Text;
-            atuala.Pass = txtCPassA.Text;
-            atuala.PrecoHR = Convert.ToInt32(nudCPrecA.Value);
-            atuala.QtdCasos = Convert.ToInt32(nudCQtdCA.Value);
-            try
+            if (!(txtANomeA.Text.Equals(string.Empty) || txtAEndA.Text.Equals(string.Empty) || txtATelA.Text.Equals(string.Empty) ||
+                (txtAEmailA.Text.Equals(string.Empty) || !txtAEmailA.Text.Contains("@")) || txtACPFA.Text.Equals(string.Empty) || 
+                txtAUserA.Text.Equals(string.Empty) || txtAPassA.Text.Equals(string.Empty) || nudAPrecA.Value == 0 ||
+                (rdbADC.Checked == false && rdbADT.Checked == false && rdbAMed.Checked == false) || picAAdv.BackgroundImage == null))
             {
-                atuala.Foto = copyImgToFolder();
+                atuala.Nome = txtANomeA.Text;
+                atuala.Endereco = txtAEndA.Text;
+                atuala.Telefone = txtATelA.Text;
+                atuala.Email = txtAEmailA.Text;
+                atuala.CPF = txtACPFA.Text;
+                atuala.User = txtAUserA.Text;
+                atuala.Pass = txtAPassA.Text;
+                atuala.PrecoHR = Convert.ToInt32(nudAPrecA.Value);
+                atuala.QtdCasos = Convert.ToInt32(nudAQtdA.Value);
+                if (rdbADC.Checked) { atuala.Area = "Direito Civil"; }
+                else
+                {
+                    if (rdbADT.Checked) { atuala.Area = "Direito Trabalhista"; }
+                    else { atuala.Area = "Mediação"; }
+                }
+                try { atuala.Foto = copyImgToFolder(); }
+                catch (Exception) { }
+                atuala.Atualizar();
+                MessageBox.Show("Advogado alterado", "Sucesso");
+                attadv();
             }
-            catch (Exception){}
+            else
+            {
+                MessageBox.Show("Preencha todos os campos!", "Atenção");
+            }
         }
 
         private void btnAReA_Click(object sender, EventArgs e)
@@ -527,7 +539,11 @@ namespace AdvoGarcia.Telas
             txtCPassA.Text = string.Empty;
             nudCPrecA.Value = 0;
             nudCQtdCA.Value = 0;
+            rdbCDC.Checked = false;
+            rdbCDT.Checked = false;
+            rdbCMed.Checked = false;
             picCAdv.BackgroundImage = null;
+
             //Alter Adv
             txtANomeA.Text = string.Empty;
             txtAEndA.Text = string.Empty;
@@ -576,8 +592,43 @@ namespace AdvoGarcia.Telas
             txtAPassA.Text = atuala.Pass;
             nudAPrecA.Value = atuala.PrecoHR;
             nudAQtdA.Value = atuala.QtdCasos;
+            if (atuala.Area.Equals("Direito Civil")) { rdbADC.Checked = true; }
+            else
+            {
+                if (atuala.Area.Equals("Direito Trabalhista")) { rdbADT.Checked = true; }
+                else { rdbAMed.Checked = true; }
+            }
             try { picAAdv.BackgroundImage = Image.FromFile(atuala.Foto); }
             catch (Exception) { picAAdv.BackColor = Color.Black; }
+        }
+
+        public void attadv() {
+            try { picPerf.BackgroundImage = Image.FromFile(atuala.Foto); }
+            catch (Exception) { picPerf.BackColor = Color.Black; }
+
+            lblNome.Text = atuala.Nome;
+            lblIDAdv.Text = atuala.Id.ToString();
+
+            if (atuala.Id_Caso != 0) { btnSelCaso.Enabled = false; }
+            else { btnEncerrar.Enabled = false; }
+
+            try
+            {
+                casoadv = new Caso();
+                casoadv = casoadv.PegaID(atuala.Id_Caso);
+                txtCasoAdv.Text = casoadv.Descricao.ToString();
+                clidoadv = new Cliente();
+                clidoadv.PegaIdCaso(casoadv.Id);
+                lblIDCli.Text = clidoadv.Id.ToString();
+                lblNomeCli.Text = clidoadv.Nome;
+                lblEndCli.Text = clidoadv.Endereco;
+                lblEmailCli.Text = clidoadv.Email;
+                lblTelCli.Text = clidoadv.Telefone;
+            }
+            catch (Exception) { }
+
+            try { picCliadv.BackgroundImage = Image.FromFile(clidoadv.Foto); }
+            catch (Exception) { picCliadv.BackColor = Color.Black; }
         }
     }
 }

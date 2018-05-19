@@ -26,6 +26,7 @@ create table tbAdvogado(
 	Tel_Adv varchar(15) not null,
 	QtdCasos int not null,
 	PrecoHR int not null,
+	Area varchar(50) not null,
 	ID_Caso int foreign key references tbCaso(ID_Caso)
 );
 
@@ -47,25 +48,29 @@ create table tbCliente(
 
 go
 
-select * from tbAdvogado;
-select * from tbCaso;
-select * from tbCliente;
+insert into tbCaso(Descricao_Caso, TempoGasto, Status_Caso)
+values('Um pão', 0, 'Andamento'),
+('Caso 2', 0, 'Andamento')
+go
 
 insert into tbAdvogado(Nome_Adv, End_Adv, Email_Adv, Foto_Adv, User_Adv, Pass_Adv, CPF_Adv, 
-Tel_Adv, QtdCasos, PrecoHR, ID_Caso)
-values('1', 'Rua1', 'email1@email.email', 'C:1', 'Teste', '123', '12332112312', '12543211234', 12, 2, 1)
+Tel_Adv, QtdCasos, PrecoHR, Area, ID_Caso)
+values('1', 'Rua1', 'email1@email.email', 'C:1', 'Teste', '123', '12332112312', '12543211234', 12, 2, 'Mediação', 1)
 go
 insert into tbAdvogado(Nome_Adv, End_Adv, Email_Adv, Foto_Adv, User_Adv, Pass_Adv, CPF_Adv, 
-Tel_Adv, QtdCasos, PrecoHR)
-values('2', 'Rua2', 'email2@email.email', 'C:2', 'Teste2', '123', '12332112312', '12543211234', 12, 2)
-
-insert into tbCaso(Descricao_Caso, TempoGasto, Status_Caso)
-values('Um pão', 0, 'Andamento')
+Tel_Adv, QtdCasos, PrecoHR, Area)
+values('2', 'Rua2', 'email2@email.email', 'C:2', 'Teste2', '123', '12332112312', '12543211234', 12, 2, 'Direito Civil')
+go
 
 insert into tbCliente(Nome_Cli, End_Cli, Email_Cli, Foto_Cli, User_Cli, Pass_Cli, CPF_Cli, Tel_Cli,
  FormaPaga, ID_Caso)
-values('Cliente2', 'Praça2', 'email2', 'c:2', 'cli2', '123', '12345678901', '11543211234', 
+values('Cliente C2', 'PraçaC2', 'emailC2', 'c:2', 'cli', '123', '12345678901', '11543211234', 
 'cheque', (select ID_Caso from tbCaso where Descricao_Caso = 'Caso 2'))
+
+
+select * from tbAdvogado;
+select * from tbCaso;
+select * from tbCliente;
 
 select ID_Caso, Descricao_Caso from tbCaso
 
@@ -74,3 +79,4 @@ select ID_Caso from tbAdvogado where User_Adv = 'Teste' COLLATE SQL_Latin1_Gener
 select ID_Advogado from tbAdvogado where Nome_Adv = 'Teste'
 
 select * from tbCliente where ID_Caso = 1
+

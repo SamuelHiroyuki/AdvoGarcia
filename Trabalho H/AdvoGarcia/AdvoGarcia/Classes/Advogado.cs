@@ -96,5 +96,30 @@ namespace AdvoGarcia.Classes
             cn.Close();
             return false;
         }
+
+        public void Atualizar() {
+            SqlConnection cn = Conexao.conectar();
+            SqlCommand cmd = cn.CreateCommand();
+
+            cmd.CommandText = "update tbAdvogado set Nome_Adv = @nome, End_Adv = @end, Email_Adv = @email, Foto_Adv = @foto, " +
+                "User_Adv = @user, Pass_Adv = @pass, CPF_Adv = @cpf, Tel_Adv = @tel, QtdCasos = @qtd, PrecoHR = @prec, Area = @area " +
+                "where ID_Advogado = @id;";
+
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = this.Id;
+            cmd.Parameters.Add("@nome", SqlDbType.VarChar, 50).Value = this.Nome;
+            cmd.Parameters.Add("@end", SqlDbType.VarChar, 50).Value = this.Endereco;
+            cmd.Parameters.Add("@email", SqlDbType.VarChar, 100).Value = this.Email;
+            cmd.Parameters.Add("@foto", SqlDbType.VarChar, 100).Value = this.Foto;
+            cmd.Parameters.Add("@user", SqlDbType.VarChar, 50).Value = this.User;
+            cmd.Parameters.Add("@pass", SqlDbType.VarChar, 50).Value = this.Pass;
+            cmd.Parameters.Add("@tel", SqlDbType.VarChar, 15).Value = this.Telefone;
+            cmd.Parameters.Add("@cpf", SqlDbType.VarChar, 14).Value = this.CPF;
+            cmd.Parameters.Add("@qtd", SqlDbType.Int).Value = this.QtdCasos;
+            cmd.Parameters.Add("@prec", SqlDbType.Int).Value = this.PrecoHR;
+            cmd.Parameters.Add("@area", SqlDbType.VarChar, 50).Value = this.Area;
+
+            cmd.ExecuteNonQuery();
+            cn.Close();
+        }
     }
 }
