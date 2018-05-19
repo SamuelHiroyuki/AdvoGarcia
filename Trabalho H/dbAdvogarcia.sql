@@ -11,6 +11,7 @@ create table tbCaso(
 	ID_Caso int primary key identity(1,1),
 	Status_Caso varchar(10) not null,
 	Descricao_Caso varchar(256) not null,
+	Anot varchar(256),
 	TempoGasto int not null
 );
 go
@@ -80,3 +81,5 @@ select ID_Advogado from tbAdvogado where Nome_Adv = 'Teste'
 
 select * from tbCliente where ID_Caso = 1
 
+
+update tbAdvogado set Anot = 'Teste do Teste em Teste' where ID_Advogado = 1

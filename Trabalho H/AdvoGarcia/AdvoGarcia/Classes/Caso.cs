@@ -13,6 +13,7 @@ namespace AdvoGarcia.Classes
         public int Id { get; set; }
         public string Descricao { get; set; }
         public string Status { get; set; }
+        public string Anotacao { get; set; }
         public int TempGasto { get; set; }
 
         public void Cadastrar()
@@ -66,11 +67,26 @@ namespace AdvoGarcia.Classes
                     caso.Id = (int)dr["ID_Caso"];
                     caso.Descricao = dr["Descricao_Caso"].ToString();
                     caso.Status = dr["Status_Caso"].ToString();
+                    caso.Anotacao = dr["Anot"].ToString();
                     caso.TempGasto = (int)dr["TempoGasto"];
                 }
             }
             cn.Close();
             return caso;
+        }
+
+        public void Anota()
+        {
+            SqlConnection cn = Conexao.conectar();
+            SqlCommand cmd = cn.CreateCommand();
+
+            cmd.CommandText = "update tbCaso set Anot = @anot where ID_Caso = @id";
+
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = this.Id;
+            cmd.Parameters.Add("@anot", SqlDbType.VarChar, 256).Value = this.Anotacao;
+
+            cmd.ExecuteNonQuery();
+            cn.Close();
         }
     }
 }

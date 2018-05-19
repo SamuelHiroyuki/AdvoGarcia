@@ -608,15 +608,18 @@ namespace AdvoGarcia.Telas
 
             lblNome.Text = atuala.Nome;
             lblIDAdv.Text = atuala.Id.ToString();
+            lblCasoResol.Text = atuala.QtdCasos.ToString();
 
-            if (atuala.Id_Caso != 0) { btnSelCaso.Enabled = false; }
-            else { btnEncerrar.Enabled = false; }
+            if (atuala.Id_Caso != 0) { btnCasoAdv.Text = "Encerrar Caso"; }
+            else { btnCasoAdv.Text = "Selecionar Caso"; }
 
             try
             {
                 casoadv = new Caso();
                 casoadv = casoadv.PegaID(atuala.Id_Caso);
                 txtCasoAdv.Text = casoadv.Descricao.ToString();
+                casoadv.Anotacao = txtAnot.Text;
+                casoadv.Anota();
                 clidoadv = new Cliente();
                 clidoadv.PegaIdCaso(casoadv.Id);
                 lblIDCli.Text = clidoadv.Id.ToString();
@@ -629,6 +632,24 @@ namespace AdvoGarcia.Telas
 
             try { picCliadv.BackgroundImage = Image.FromFile(clidoadv.Foto); }
             catch (Exception) { picCliadv.BackColor = Color.Black; }
+        }
+
+        private void btnCasoAdv_Click(object sender, EventArgs e)
+        {
+            if (atuala.Id_Caso != 0)
+            {
+                EncerrarCaso();
+            }
+            else
+            {
+                SelecionarCaso();
+            }
+        }
+
+        public void SelecionarCaso() { }
+
+        public void EncerrarCaso() {
+            atuala.QtdCasos++;
         }
     }
 }

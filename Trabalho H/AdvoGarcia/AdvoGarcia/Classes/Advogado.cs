@@ -70,7 +70,7 @@ namespace AdvoGarcia.Classes
                 this.QtdCasos = (int)dr[9];
                 this.PrecoHR = (int)dr[10];
                 this.Area = dr[11].ToString();
-                try{ this.Id_Caso = (int)dr["Id_Caso"]; }
+                try { this.Id_Caso = (int)dr["Id_Caso"]; }
                 catch (Exception){}
                 return true;
             }
