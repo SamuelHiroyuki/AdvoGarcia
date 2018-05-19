@@ -646,6 +646,36 @@ namespace AdvoGarcia.Telas
             }
         }
 
+        //
+        //-------------------------------Eventos do Cadastro Adv-------------------------------
+        //
+        private void txtCCPFA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Limita o TextBox a aceitar apenas números
+            if (!(char.IsDigit(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCTelA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Limita o TextBox a aceitar apenas números
+            if (!(char.IsDigit(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtCNomeA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //para limitar o TextBox a aceitar apenas caracteres não numéricos
+            if (char.IsDigit(e.KeyChar) && e.KeyChar != 8)
+            {
+                e.Handled = true;
+            }
+        }
+
         public void SelecionarCaso() { }
 
         public void EncerrarCaso() {

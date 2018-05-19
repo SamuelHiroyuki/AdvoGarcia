@@ -19,6 +19,12 @@ namespace AdvoGarcia.Telas
         public frmLogin()
         {
             InitializeComponent();
+            txtUser.LineIdleColor = Color.FromArgb(70, 80, 90);
+            txtUser.LineFocusedColor = Color.FromArgb(70, 80, 90);
+            txtUser.LineMouseHoverColor = Color.FromArgb(70, 80, 90);
+            txtPass.LineIdleColor = Color.FromArgb(70, 80, 90);
+            txtPass.LineFocusedColor = Color.FromArgb(70, 80, 90);
+            txtPass.LineMouseHoverColor = Color.FromArgb(70, 80, 90);
         }
 
         //Fecha a aplicação
@@ -30,14 +36,21 @@ namespace AdvoGarcia.Telas
         //Botão de logar
         private void btnLogar_Click(object sender, EventArgs e)
         {
-            if (txtUser.Text.Equals(string.Empty) || txtPass.Text.Equals(string.Empty))
+            if (txtUser.Text.Trim().Equals(string.Empty) || txtPass.Text.Trim().Equals(string.Empty))
             {
+                this.ActiveControl = null;
+                txtUser.LineIdleColor = Color.FromArgb(217, 19, 39);
+                txtUser.LineFocusedColor = Color.FromArgb(217, 19, 39);
+                txtUser.LineMouseHoverColor = Color.FromArgb(217, 19, 39);
+                txtPass.LineIdleColor = Color.FromArgb(217, 19, 39);
+                txtPass.LineFocusedColor = Color.FromArgb(217, 19, 39);
+                txtPass.LineMouseHoverColor = Color.FromArgb(217, 19, 39);
                 MessageBox.Show("Preencha todos os campos!", "Atenção");
             }
             else
             {
-                a = new Advogado() { User = txtUser.Text, Pass = txtPass.Text };
-                c = new Cliente() { User = txtUser.Text, Pass = txtPass.Text };
+                a = new Advogado() { User = txtUser.Text.Trim(), Pass = txtPass.Text.Trim() };
+                c = new Cliente() { User = txtUser.Text.Trim(), Pass = txtPass.Text.Trim() };
 
                 if (a.Verificar())
                 {
@@ -84,6 +97,22 @@ namespace AdvoGarcia.Telas
         private void txtPass_OnValueChanged(object sender, EventArgs e)
         {
             txtPass.isPassword = true;
+        }
+
+        //Eventos para tirar o foco de tudo
+        private void pnlLogin_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
+        }
+
+        private void pnlLogo_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.ActiveControl = null;
         }
     }
 }
