@@ -21,7 +21,7 @@ namespace AdvoGarcia.Classes
         public string Foto { get; set; }
         public int QtdCasos { get; set; }
         public int PrecoHR { get; set; }
-        public Caso Id_Caso { get; set; }
+        public int Id_Caso { get; set; }
 
         public void Cadastrar() {
             SqlConnection cn = Conexao.conectar();
@@ -43,6 +43,53 @@ namespace AdvoGarcia.Classes
 
             cmd.ExecuteNonQuery();
             cn.Close();
+        }
+
+        public bool Verificar() {
+            SqlConnection cn = Conexao.conectar();
+            SqlCommand cmd = cn.CreateCommand();
+
+            cmd.CommandText = "select * from tbAdvogado where User_Adv = @user COLLATE SQL_Latin1_General_CP1_CS_AS and Pass_Adv = " +
+                "@pass COLLATE SQL_Latin1_General_CP1_CS_AS ";
+
+            cmd.Parameters.Add("@user", SqlDbType.VarChar, 50).Value = this.User;
+            cmd.Parameters.Add("@pass", SqlDbType.VarChar, 50).Value = this.Pass;
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                this.Id = (int)dr[0];
+                this.Nome = dr[1].ToString();
+                this.Endereco = dr[2].ToString();
+                this.Email = dr[3].ToString();
+                this.Telefone = dr[8].ToString();
+                this.CPF = dr[7].ToString();
+                this.Foto = dr[4].ToString();
+                this.QtdCasos = (int)dr[9];
+                this.PrecoHR = (int)dr[10];
+                return true;
+            }
+            cn.Close();
+            return false;
+        }
+
+        public bool Confirmar()
+        {
+            SqlConnection cn = Conexao.conectar();
+            SqlCommand cmd = cn.CreateCommand();
+
+            cmd.CommandText = "select ID_Advogado from tbAdvogado where User_Adv = @user COLLATE SQL_Latin1_General_CP1_CS_AS or CPF_Adv = @cpf";
+
+            cmd.Parameters.Add("@user", SqlDbType.VarChar, 50).Value = this.User;
+            cmd.Parameters.Add("@cpf", SqlDbType.VarChar, 50).Value = this.CPF;
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                return true;
+            }
+            cn.Close();
+            return false;
         }
     }
 }

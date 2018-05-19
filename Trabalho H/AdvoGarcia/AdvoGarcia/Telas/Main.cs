@@ -16,8 +16,28 @@ namespace AdvoGarcia.Telas
         int i = 0;
         string fileName;
         OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG|*.jpg", ValidateNames = true, Multiselect = false };
-        public frmMain()
+        Cliente atualc;
+        Advogado atuala;
+
+        public frmMain(Advogado aa)
         {
+            atuala = aa;
+            InitializeComponent();
+            picPerf.BackgroundImage = Image.FromFile(atuala.Foto);
+            lblCargo.Text = "Advogado";
+            lblNome.Text = atuala.Nome;
+            tabControl.SelectedIndex = 1;
+            cboFormP.Items.Add("Cheque");
+            cboFormP.Items.Add("Cartão de Crédito");
+            cboFormP.Items.Add("Cartão de Débito");
+            cboAltFormP.Items.Add("Cheque");
+            cboAltFormP.Items.Add("Cartão de Crédito");
+            cboAltFormP.Items.Add("Cartão de Débito");
+        }
+
+        public frmMain(Cliente cc)
+        {
+            atualc = cc;
             InitializeComponent();
             tabControl.SelectedIndex = 1;
             cboFormP.Items.Add("Cheque");
@@ -96,8 +116,17 @@ namespace AdvoGarcia.Telas
             a.PrecoHR = Convert.ToInt32(nudCPrecA.Value);
             a.QtdCasos = Convert.ToInt32(nudCQtdCA.Value);
             a.Foto = copyImgToFolder();
-            a.Cadastrar();
-            MessageBox.Show("Advogado cadastrado", "Sucesso");
+            if (a.Confirmar())
+            {
+                MessageBox.Show("Já existe", "Atenção");
+            }
+            else
+            {
+                a.Cadastrar();
+                MessageBox.Show("Advogado cadastrado", "Sucesso");
+                limpar();
+                a = null;
+            }
         }
 
         //
@@ -213,6 +242,9 @@ namespace AdvoGarcia.Telas
                 c.Caso = caso.PegaID(txtDescCaso.Text);
                 c.Cadastrar();
                 MessageBox.Show("Cliente cadastrado", "Sucesso");
+                limpar();
+                caso = null;
+                c = null;
             }
         }
 

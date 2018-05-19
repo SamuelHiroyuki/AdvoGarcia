@@ -15,6 +15,16 @@ namespace AdvoGarcia.Telas
         public frmSplash()
         {
             InitializeComponent();
+            //deixa o fundo transparente
+            this.TransparencyKey = (BackColor);
+        }
+
+        private void tmrClose_Tick(object sender, EventArgs e)
+        {
+            tmrClose.Enabled = false;
+            this.Hide();
+            frmLogin login = new frmLogin();
+            login.ShowDialog();
         }
     }
 }

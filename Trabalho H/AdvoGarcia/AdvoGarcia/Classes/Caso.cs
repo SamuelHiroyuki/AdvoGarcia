@@ -36,13 +36,37 @@ namespace AdvoGarcia.Classes
             Caso caso = new Caso();
             SqlConnection cn = Conexao.conectar();
             SqlCommand cmd = cn.CreateCommand();
-            cmd.CommandText = "select ID_Caso, Descricao_Caso from tbCaso";
+            cmd.CommandText = "select * from tbCaso";
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 if (dr["Descricao_Caso"].ToString().Equals(s))
                 {
                     caso.Id = (int)dr["ID_Caso"];
+                    caso.Descricao = dr["Descricao_Caso"].ToString();
+                    caso.Status = dr["Status_Caso"].ToString();
+                    caso.TempGasto = (int)dr["TempoGasto"];
+                }
+            }
+            cn.Close();
+            return caso;
+        }
+
+        public Caso PegaID(int s)
+        {
+            Caso caso = new Caso();
+            SqlConnection cn = Conexao.conectar();
+            SqlCommand cmd = cn.CreateCommand();
+            cmd.CommandText = "select * from tbCaso";
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                if (Convert.ToInt32(dr["ID_Caso"]) == s)
+                {
+                    caso.Id = (int)dr["ID_Caso"];
+                    caso.Descricao = dr["Descricao_Caso"].ToString();
+                    caso.Status = dr["Status_Caso"].ToString();
+                    caso.TempGasto = (int)dr["TempoGasto"];
                 }
             }
             cn.Close();

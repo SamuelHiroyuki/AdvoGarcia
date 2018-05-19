@@ -134,6 +134,7 @@
             this.btnLogar.Size = new System.Drawing.Size(181, 45);
             this.btnLogar.TabIndex = 3;
             this.btnLogar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLogar.Click += new System.EventHandler(this.btnLogar_Click);
             // 
             // panel2
             // 
@@ -161,6 +162,8 @@
             this.txtPass.Size = new System.Drawing.Size(380, 39);
             this.txtPass.TabIndex = 2;
             this.txtPass.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPass.OnValueChanged += new System.EventHandler(this.txtPass_OnValueChanged);
+            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPass_KeyPress);
             // 
             // label1
             // 
@@ -191,6 +194,7 @@
             this.txtUser.Size = new System.Drawing.Size(380, 43);
             this.txtUser.TabIndex = 1;
             this.txtUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtUser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUser_KeyPress);
             // 
             // frmLogin
             // 

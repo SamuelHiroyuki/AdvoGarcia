@@ -39,10 +39,40 @@ namespace AdvoGarcia.Classes
             cmd.Parameters.Add("@tel", SqlDbType.VarChar, 15).Value = this.Telefone;
             cmd.Parameters.Add("@cpf", SqlDbType.VarChar, 14).Value = this.CPF;
             cmd.Parameters.Add("@paga", SqlDbType.VarChar, 20).Value = this.FormaPaga;
-            cmd.Parameters.Add("@caso", SqlDbType.Int).Value = this.Caso.Id;
+            cmd.Parameters.Add("@caso", SqlDbType.Int).Value = this.Caso;
 
             cmd.ExecuteNonQuery();
             cn.Close();
+        }
+
+        public bool Verificar()
+        {
+            Caso caso = new Caso();
+            SqlConnection cn = Conexao.conectar();
+            SqlCommand cmd = cn.CreateCommand();
+
+            cmd.CommandText = "select * from tbCliente where User_Cli = @user COLLATE SQL_Latin1_General_CP1_CS_AS and Pass_Cli = " +
+                "@pass COLLATE SQL_Latin1_General_CP1_CS_AS ";
+
+            cmd.Parameters.Add("@user", SqlDbType.VarChar, 50).Value = this.User;
+            cmd.Parameters.Add("@pass", SqlDbType.VarChar, 50).Value = this.Pass;
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                this.Id = (int)dr[0];
+                this.Nome = dr[1].ToString();
+                this.Endereco = dr[2].ToString();
+                this.Email = dr[3].ToString();
+                this.Telefone = dr[8].ToString();
+                this.CPF = dr[7].ToString();
+                this.Foto = dr[4].ToString();
+                this.FormaPaga = dr[9].ToString();
+                this.Caso = caso.PegaID((int)dr[10]);
+                return true;
+            }
+            cn.Close();
+            return false;
         }
     }
 }

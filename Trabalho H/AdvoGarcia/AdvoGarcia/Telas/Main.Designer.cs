@@ -154,6 +154,11 @@
             this.pnlLogo = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblCargo = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.bunifuTileButton1 = new Bunifu.Framework.UI.BunifuTileButton();
+            this.picPerf = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pnlTopo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             this.pnlMenu.SuspendLayout();
@@ -176,6 +181,8 @@
             this.pnlLogo.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPerf)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlLateral
@@ -2000,6 +2007,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.bunifuTileButton1);
+            this.panel1.Controls.Add(this.lblNome);
+            this.panel1.Controls.Add(this.lblCargo);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -2015,6 +2026,62 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // lblCargo
+            // 
+            this.lblCargo.AutoSize = true;
+            this.lblCargo.Location = new System.Drawing.Point(125, 132);
+            this.lblCargo.Name = "lblCargo";
+            this.lblCargo.Size = new System.Drawing.Size(41, 13);
+            this.lblCargo.TabIndex = 1;
+            this.lblCargo.Text = "label22";
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(125, 100);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(41, 13);
+            this.lblNome.TabIndex = 2;
+            this.lblNome.Text = "label41";
+            // 
+            // bunifuTileButton1
+            // 
+            this.bunifuTileButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(124)))), ((int)(((byte)(96)))));
+            this.bunifuTileButton1.color = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(124)))), ((int)(((byte)(96)))));
+            this.bunifuTileButton1.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(124)))), ((int)(((byte)(96)))));
+            this.bunifuTileButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTileButton1.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.bunifuTileButton1.ForeColor = System.Drawing.Color.White;
+            this.bunifuTileButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuTileButton1.Image")));
+            this.bunifuTileButton1.ImagePosition = 20;
+            this.bunifuTileButton1.ImageZoom = 50;
+            this.bunifuTileButton1.LabelPosition = 41;
+            this.bunifuTileButton1.LabelText = "Salvar";
+            this.bunifuTileButton1.Location = new System.Drawing.Point(104, 192);
+            this.bunifuTileButton1.Margin = new System.Windows.Forms.Padding(6);
+            this.bunifuTileButton1.Name = "bunifuTileButton1";
+            this.bunifuTileButton1.Size = new System.Drawing.Size(74, 21);
+            this.bunifuTileButton1.TabIndex = 26;
+            // 
+            // picPerf
+            // 
+            this.picPerf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picPerf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picPerf.Location = new System.Drawing.Point(3, 3);
+            this.picPerf.Name = "picPerf";
+            this.picPerf.Size = new System.Drawing.Size(100, 115);
+            this.picPerf.TabIndex = 27;
+            this.picPerf.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(82)))));
+            this.panel2.Controls.Add(this.picPerf);
+            this.panel2.Location = new System.Drawing.Point(1, 95);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(106, 118);
+            this.panel2.TabIndex = 4;
             // 
             // frmMain
             // 
@@ -2054,7 +2121,10 @@
             this.tabCaso.ResumeLayout(false);
             this.pnlLogo.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picPerf)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -2186,5 +2256,10 @@
         private Bunifu.Framework.UI.BunifuTileButton btnCasoClose;
         private Bunifu.Framework.UI.BunifuTileButton btnCasoSave;
         private Bunifu.Framework.UI.BunifuImageButton btnMin;
+        private System.Windows.Forms.PictureBox picPerf;
+        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton1;
+        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.Label lblCargo;
+        private System.Windows.Forms.Panel panel2;
     }
 }
