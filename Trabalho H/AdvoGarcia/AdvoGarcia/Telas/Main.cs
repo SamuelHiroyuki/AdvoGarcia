@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdvoGarcia.Classes;
 
 namespace AdvoGarcia.Telas
 {
@@ -84,7 +85,19 @@ namespace AdvoGarcia.Telas
 
         private void btnSaveA_Click(object sender, EventArgs e)
         {
-            copyImgToFolder();
+            Advogado a = new Advogado();
+            a.Nome = txtCNomeA.Text;
+            a.Endereco = txtCEndA.Text;
+            a.Telefone = txtCTelA.Text;
+            a.Email = txtCEmailA.Text;
+            a.CPF = txtCCPFA.Text;
+            a.User = txtCUserA.Text;
+            a.Pass = txtCPassA.Text;
+            a.PrecoHR = Convert.ToInt32(nudCPrecA.Value);
+            a.QtdCasos = Convert.ToInt32(nudCQtdCA.Value);
+            a.Foto = copyImgToFolder();
+            a.Cadastrar();
+            MessageBox.Show("Advogado cadastrado", "Sucesso");
         }
 
         //
@@ -178,7 +191,29 @@ namespace AdvoGarcia.Telas
 
         private void btnCSaveC_Click(object sender, EventArgs e)
         {
-            copyImgToFolder();
+            if (checkCaso.Checked == false)
+            {
+                MessageBox.Show("Preencha o Caso", "Atenção");
+            }
+            else
+            {
+                Caso caso = new Caso();
+                caso.Descricao = txtDescCaso.Text;
+                caso.Cadastrar();
+                Cliente c = new Cliente();
+                c.Nome = txtCNomeC.Text;
+                c.Endereco = txtCEndC.Text;
+                c.Telefone = txtCTelC.Text;
+                c.Email = txtCEmailC.Text;
+                c.CPF = txtCCPFC.Text;
+                c.User = txtCUserC.Text;
+                c.Pass = txtCPassC.Text;
+                c.FormaPaga = cboFormP.Text;
+                c.Foto = copyImgToFolder();
+                c.Caso = caso.PegaID(txtDescCaso.Text);
+                c.Cadastrar();
+                MessageBox.Show("Cliente cadastrado", "Sucesso");
+            }
         }
 
         //
@@ -311,7 +346,7 @@ namespace AdvoGarcia.Telas
         //
         //-------------------------------Métodos-------------------------------
         //
-        private void copyImgToFolder()
+        private string copyImgToFolder()
         {
             string nomev = string.Empty;
             int j = 0;
@@ -332,6 +367,14 @@ namespace AdvoGarcia.Telas
             } while (System.IO.File.Exists(@"C:\Users\samhi\Desktop\Trabalho H\AdvoGarcia\Fotos\" + nomev));
 
             System.IO.File.Copy(sourceFile, destFile, true);
+            if (nomev.Equals(string.Empty))
+            {
+                return (@"C: \Users\samhi\Desktop\Trabalho H\AdvoGarcia\Fotos\" + nom);
+            }
+            else
+            {
+                return (@"C: \Users\samhi\Desktop\Trabalho H\AdvoGarcia\Fotos\" + nomev);
+            }
         }
 
         private void limpar()
