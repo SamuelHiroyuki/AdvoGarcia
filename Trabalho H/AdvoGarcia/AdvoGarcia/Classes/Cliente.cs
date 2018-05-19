@@ -74,5 +74,24 @@ namespace AdvoGarcia.Classes
             cn.Close();
             return false;
         }
+
+        public void PegaIdCaso(int s)
+        {
+            SqlConnection cn = Conexao.conectar();
+            SqlCommand cmd = cn.CreateCommand();
+            cmd.CommandText = "select * from tbCliente where ID_Caso = @id";
+            cmd.Parameters.Add("@id", SqlDbType.Int).Value = s;
+            SqlDataReader dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                this.Id = (int)dr[0];
+                this.Nome = dr[1].ToString();
+                this.Telefone = dr[8].ToString();
+                this.Email = dr[3].ToString();
+                this.Endereco = dr[2].ToString();
+                this.Foto = dr[4].ToString();
+            }
+            cn.Close();
+        }
     }
 }

@@ -60,7 +60,7 @@ Tel_Adv, QtdCasos, PrecoHR)
 values('2', 'Rua2', 'email2@email.email', 'C:2', 'Teste2', '123', '12332112312', '12543211234', 12, 2)
 
 insert into tbCaso(Descricao_Caso, TempoGasto, Status_Caso)
-values('Caso 2', 0, 'Andamento')
+values('Um pão', 0, 'Andamento')
 
 insert into tbCliente(Nome_Cli, End_Cli, Email_Cli, Foto_Cli, User_Cli, Pass_Cli, CPF_Cli, Tel_Cli,
  FormaPaga, ID_Caso)
@@ -72,3 +72,5 @@ select ID_Caso, Descricao_Caso from tbCaso
 select ID_Caso from tbAdvogado where User_Adv = 'Teste' COLLATE SQL_Latin1_General_CP1_CS_AS and Pass_Adv = '123' COLLATE SQL_Latin1_General_CP1_CS_AS 
 
 select ID_Advogado from tbAdvogado where Nome_Adv = 'Teste'
+
+select * from tbCliente where ID_Caso = 1

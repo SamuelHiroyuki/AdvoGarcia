@@ -19,7 +19,6 @@ namespace AdvoGarcia.Telas
         public frmLogin()
         {
             InitializeComponent();
-            this.ActiveControl = null;
         }
 
         private void btnClose_Click(object sender, EventArgs e)

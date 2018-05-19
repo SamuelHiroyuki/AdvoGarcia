@@ -16,16 +16,36 @@ namespace AdvoGarcia.Telas
         int i = 0;
         string fileName;
         OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG|*.jpg", ValidateNames = true, Multiselect = false };
-        Cliente atualc;
-        Advogado atuala;
+        Cliente atualc, clidoadv;
+        Advogado atuala, advdocli;
+        Caso casoadv;
 
         public frmMain(Advogado aa)
         {
             atuala = aa;
             InitializeComponent();
-            picPerf.BackgroundImage = Image.FromFile(atuala.Foto);
-            lblCargo.Text = "Advogado";
+            try { picPerf.BackgroundImage = Image.FromFile(atuala.Foto); }
+            catch (Exception){ picPerf.BackColor = Color.Black; }
             lblNome.Text = atuala.Nome;
+            lblIDAdv.Text = atuala.Id.ToString();
+            if (atuala.Id_Caso != 0){ btnSelCaso.Enabled = false; }
+            else{ btnEncerrar.Enabled = false; }
+            try
+            {
+                casoadv = new Caso();
+                casoadv = casoadv.PegaID(atuala.Id_Caso);
+                txtCasoAdv.Text = casoadv.Descricao.ToString();
+                clidoadv = new Cliente();
+                clidoadv.PegaIdCaso(casoadv.Id);
+                lblIDCli.Text = clidoadv.Id.ToString();
+                lblNomeCli.Text = clidoadv.Nome;
+                lblEndCli.Text = clidoadv.Endereco;
+                lblEmailCli.Text = clidoadv.Email;
+                lblTelCli.Text = clidoadv.Telefone;
+            }
+            catch (Exception){}
+            try { picCliadv.BackgroundImage = Image.FromFile(clidoadv.Foto); }
+            catch (Exception) { picCliadv.BackColor = Color.Black; }
             tabControl.SelectedIndex = 1;
             cboFormP.Items.Add("Cheque");
             cboFormP.Items.Add("Cartão de Crédito");
@@ -33,19 +53,25 @@ namespace AdvoGarcia.Telas
             cboAltFormP.Items.Add("Cheque");
             cboAltFormP.Items.Add("Cartão de Crédito");
             cboAltFormP.Items.Add("Cartão de Débito");
+            btnAltC.Enabled = false;
         }
 
         public frmMain(Cliente cc)
         {
             atualc = cc;
             InitializeComponent();
-            tabControl.SelectedIndex = 1;
+            try { picCli.BackgroundImage = Image.FromFile(atualc.Foto); }
+            catch (Exception) { picCli.BackColor = Color.Black; }
+            tabControl.SelectedIndex = 8;
             cboFormP.Items.Add("Cheque");
             cboFormP.Items.Add("Cartão de Crédito");
             cboFormP.Items.Add("Cartão de Débito");
             cboAltFormP.Items.Add("Cheque");
             cboAltFormP.Items.Add("Cartão de Crédito");
             cboAltFormP.Items.Add("Cartão de Débito");
+            btnCadA.Enabled = false;
+            btnAltA.Enabled = false;
+            btnCadC.Enabled = false;
         }
 
         //
@@ -59,6 +85,44 @@ namespace AdvoGarcia.Telas
         private void btnMin_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            atuala = null;
+            atualc = null;
+            this.Hide();
+            login.ShowDialog();
+        }
+
+        //
+        //-------------------------------Home-------------------------------
+        //
+        private void btnMain_Click(object sender, EventArgs e)
+        {
+            if (atuala != null)
+            {
+                if (tabControl.SelectedIndex != 1)
+                {
+                    if (MessageBox.Show("Deseja mesmo sair?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+                    {
+                        tabControl.SelectedIndex = 1;
+                        limpar();
+                    }
+                }
+            }
+            else
+            {
+                if (tabControl.SelectedIndex !=8)
+                {
+                    if (MessageBox.Show("Deseja mesmo sair?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+                    {
+                        tabControl.SelectedIndex = 8;
+                        limpar();
+                    }
+                }
+            }
         }
 
         //
@@ -140,11 +204,13 @@ namespace AdvoGarcia.Telas
                 {
                     tabControl.SelectedIndex = 2;
                     limpar();
+                    atadv();
                 }
             }
             else
             {
                 tabControl.SelectedIndex = 2;
+                atadv();
             }
         }
         private void btnACancelA_Click(object sender, EventArgs e)
@@ -173,7 +239,25 @@ namespace AdvoGarcia.Telas
 
         private void btnASaveA_Click(object sender, EventArgs e)
         {
-            copyImgToFolder();
+            atuala.Nome = txtCNomeA.Text;
+            atuala.Endereco = txtCEndA.Text;
+            atuala.Telefone = txtCTelA.Text;
+            atuala.Email = txtCEmailA.Text;
+            atuala.CPF = txtCCPFA.Text;
+            atuala.User = txtCUserA.Text;
+            atuala.Pass = txtCPassA.Text;
+            atuala.PrecoHR = Convert.ToInt32(nudCPrecA.Value);
+            atuala.QtdCasos = Convert.ToInt32(nudCQtdCA.Value);
+            try
+            {
+                atuala.Foto = copyImgToFolder();
+            }
+            catch (Exception){}
+        }
+
+        private void btnAReA_Click(object sender, EventArgs e)
+        {
+            atadv();
         }
 
         //
@@ -253,7 +337,7 @@ namespace AdvoGarcia.Telas
         //
         private void btnAltC_Click(object sender, EventArgs e)
         {
-            if (tabControl.SelectedIndex != 1 && tabControl.SelectedIndex != 3)
+            if (tabControl.SelectedIndex != 8 && tabControl.SelectedIndex != 3)
             {
                 if (MessageBox.Show("Deseja mesmo sair?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
                 {
@@ -300,16 +384,33 @@ namespace AdvoGarcia.Telas
         //
         private void btnConsulta_Click(object sender, EventArgs e)
         {
-            if (tabControl.SelectedIndex != 1 && tabControl.SelectedIndex != 5)
+            if (atuala != null)
             {
-                if (MessageBox.Show("Deseja mesmo sair?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+                if (tabControl.SelectedIndex != 1 && tabControl.SelectedIndex != 5)
+                {
+                    if (MessageBox.Show("Deseja mesmo sair?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+                    {
+                        tabControl.SelectedIndex = 5;
+                    }
+                }
+                else
                 {
                     tabControl.SelectedIndex = 5;
                 }
             }
             else
             {
-                tabControl.SelectedIndex = 5;
+                if (tabControl.SelectedIndex != 8 && tabControl.SelectedIndex != 5)
+                {
+                    if (MessageBox.Show("Deseja mesmo sair?", "Atenção", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation) == DialogResult.OK)
+                    {
+                        tabControl.SelectedIndex = 5;
+                    }
+                }
+                else
+                {
+                    tabControl.SelectedIndex = 5;
+                }
             }
         }
 
@@ -458,6 +559,20 @@ namespace AdvoGarcia.Telas
 
             txtDescCaso.Text = string.Empty;
             fileName = string.Empty;
+        }
+
+        public void atadv() {
+            txtANomeA.Text = atuala.Nome;
+            txtAEndA.Text = atuala.Endereco;
+            txtATelA.Text = atuala.Telefone;
+            txtACPFA.Text = atuala.CPF;
+            txtAEmailA.Text = atuala.Email;
+            txtAUserA.Text = atuala.User;
+            txtAPassA.Text = atuala.Pass;
+            nudAPrecA.Value = atuala.PrecoHR;
+            nudAQtdA.Value = atuala.QtdCasos;
+            try { picAAdv.BackgroundImage = Image.FromFile(atuala.Foto); }
+            catch (Exception) { picAAdv.BackColor = Color.Black; }
         }
     }
 }
