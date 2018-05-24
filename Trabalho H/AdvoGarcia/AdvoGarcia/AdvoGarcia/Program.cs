@@ -16,7 +16,7 @@ namespace AdvoGarcia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Teste());
+            Application.Run(new Telas.Main());
         }
     }
 }
