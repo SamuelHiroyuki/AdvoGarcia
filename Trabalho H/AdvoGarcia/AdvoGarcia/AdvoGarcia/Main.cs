@@ -25,7 +25,7 @@ namespace AdvoGarcia.Telas
         public frmMain(Advogado aa)
         {
             atuala = aa;
-            InitializeComponent();
+            //InitializeComponent();
             tabControl.SelectedIndex = 1;
             attadv();
             cboFormP.Items.Add("Cheque");
@@ -40,7 +40,7 @@ namespace AdvoGarcia.Telas
         public frmMain(Cliente cc)
         {
             atualc = cc;
-            InitializeComponent();
+            //InitializeComponent();
             try { picCli.BackgroundImage = Image.FromFile(atualc.Foto); }
             catch (Exception) { picCli.BackColor = Color.Black; }
             tabControl.SelectedIndex = 8;
@@ -613,25 +613,25 @@ namespace AdvoGarcia.Telas
             if (atuala.Id_Caso != 0) { btnCasoAdv.Text = "Encerrar Caso"; }
             else { btnCasoAdv.Text = "Selecionar Caso"; }
 
-            try
-            {
-                casoadv = new Caso();
-                casoadv = casoadv.PegaID(atuala.Id_Caso);
-                txtCasoAdv.Text = casoadv.Descricao.ToString();
-                casoadv.Anotacao = txtAnot.Text;
-                casoadv.Anota();
-                clidoadv = new Cliente();
-                clidoadv.PegaIdCaso(casoadv.Id);
-                lblIDCli.Text = clidoadv.Id.ToString();
-                lblNomeCli.Text = clidoadv.Nome;
-                lblEndCli.Text = clidoadv.Endereco;
-                lblEmailCli.Text = clidoadv.Email;
-                lblTelCli.Text = clidoadv.Telefone;
-            }
-            catch (Exception) { }
+            //try
+            //{
+            //    casoadv = new Caso();
+            //    casoadv = casoadv.PegaID(atuala.Id_Caso);
+            //    txtCasoAdv.Text = casoadv.Descricao.ToString();
+            //    casoadv.Anotacao = txtAnot.Text;
+            //    casoadv.Anota();
+            //    clidoadv = new Cliente();
+            //    clidoadv.PegaIdCaso(casoadv.Id);
+            //    lblIDCli.Text = clidoadv.Id.ToString();
+            //    lblNomeCli.Text = clidoadv.Nome;
+            //    lblEndCli.Text = clidoadv.Endereco;
+            //    lblEmailCli.Text = clidoadv.Email;
+            //    lblTelCli.Text = clidoadv.Telefone;
+            //}
+            //catch (Exception) { }
 
-            try { picCliadv.BackgroundImage = Image.FromFile(clidoadv.Foto); }
-            catch (Exception) { picCliadv.BackColor = Color.Black; }
+            //try { picCliadv.BackgroundImage = Image.FromFile(clidoadv.Foto); }
+            //catch (Exception) { picCliadv.BackColor = Color.Black; }
         }
 
         private void btnCasoAdv_Click(object sender, EventArgs e)
