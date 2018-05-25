@@ -32,6 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.panel3 = new System.Windows.Forms.Panel();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
+            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
             this.metroTile3 = new MetroFramework.Controls.MetroTile();
@@ -47,25 +53,43 @@
             this.drg2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.drg3 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.metroTile8 = new MetroFramework.Controls.MetroTile();
-            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTile9 = new MetroFramework.Controls.MetroTile();
-            this.metroTile10 = new MetroFramework.Controls.MetroTile();
-            this.metroTile12 = new MetroFramework.Controls.MetroTile();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.bunifuElipse2 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.txtAnot = new System.Windows.Forms.RichTextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.bunifuElipse3 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.bunifuTextbox1 = new Bunifu.Framework.UI.BunifuTextbox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.metroTabControl1.SuspendLayout();
+            this.metroTabPage1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.pnlTopo.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.metroTabPage1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel5.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel3
@@ -85,6 +109,82 @@
             this.metroTabControl1.Size = new System.Drawing.Size(808, 524);
             this.metroTabControl1.TabIndex = 36;
             this.metroTabControl1.UseSelectable = true;
+            // 
+            // metroTabPage1
+            // 
+            this.metroTabPage1.Controls.Add(this.bunifuImageButton1);
+            this.metroTabPage1.Controls.Add(this.panel10);
+            this.metroTabPage1.Controls.Add(this.panel9);
+            this.metroTabPage1.Controls.Add(this.panel7);
+            this.metroTabPage1.Controls.Add(this.panel5);
+            this.metroTabPage1.Controls.Add(this.pictureBox2);
+            this.metroTabPage1.Controls.Add(this.panel4);
+            this.metroTabPage1.Controls.Add(this.panel2);
+            this.metroTabPage1.Controls.Add(this.label2);
+            this.metroTabPage1.Controls.Add(this.label1);
+            this.metroTabPage1.HorizontalScrollbarBarColor = true;
+            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.HorizontalScrollbarSize = 10;
+            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage1.Name = "metroTabPage1";
+            this.metroTabPage1.Size = new System.Drawing.Size(800, 482);
+            this.metroTabPage1.TabIndex = 0;
+            this.metroTabPage1.Text = "metroTabPage1";
+            this.metroTabPage1.VerticalScrollbarBarColor = true;
+            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage1.VerticalScrollbarSize = 10;
+            this.metroTabPage1.Click += new System.EventHandler(this.metroTabPage1_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.txtAnot);
+            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.panel8);
+            this.panel2.Location = new System.Drawing.Point(42, 145);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(505, 192);
+            this.panel2.TabIndex = 74;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel6.Location = new System.Drawing.Point(2, 190);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(505, 2);
+            this.panel6.TabIndex = 76;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.SystemColors.Control;
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(2, 192);
+            this.panel8.TabIndex = 77;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(37, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(381, 25);
+            this.label2.TabIndex = 67;
+            this.label2.Text = "Última vez logado : dd/mm/aaaa";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(14, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(388, 39);
+            this.label1.TabIndex = 66;
+            this.label1.Text = "Seja bem-vindo Samuel";
             // 
             // metroTile1
             // 
@@ -165,7 +265,7 @@
             // 
             // btnMin
             // 
-            this.btnMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.btnMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(82)))));
             this.btnMin.Image = ((System.Drawing.Image)(resources.GetObject("btnMin.Image")));
             this.btnMin.ImageActive = null;
             this.btnMin.Location = new System.Drawing.Point(745, 3);
@@ -178,7 +278,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(65)))), ((int)(((byte)(82)))));
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
             this.btnClose.ImageActive = null;
             this.btnClose.Location = new System.Drawing.Point(776, 3);
@@ -202,6 +302,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -211,12 +312,13 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-1, -4);
+            this.pictureBox1.Location = new System.Drawing.Point(-7, -9);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(61, 40);
+            this.pictureBox1.Size = new System.Drawing.Size(71, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 68;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // drg1
             // 
@@ -244,129 +346,247 @@
             this.drg3.TargetControl = null;
             this.drg3.Vertical = true;
             // 
-            // label1
+            // bunifuElipse2
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(388, 39);
-            this.label1.TabIndex = 66;
-            this.label1.Text = "Seja bem-vindo Samuel";
+            this.bunifuElipse2.ElipseRadius = 6;
+            this.bunifuElipse2.TargetControl = this.panel4;
             // 
-            // label2
+            // txtAnot
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(37, 54);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(381, 25);
-            this.label2.TabIndex = 67;
-            this.label2.Text = "Última vez logado : dd/mm/aaaa";
+            this.txtAnot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAnot.Enabled = false;
+            this.txtAnot.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAnot.Location = new System.Drawing.Point(21, 65);
+            this.txtAnot.Name = "txtAnot";
+            this.txtAnot.Size = new System.Drawing.Size(470, 113);
+            this.txtAnot.TabIndex = 81;
+            this.txtAnot.Text = "";
             // 
-            // metroTile8
+            // pictureBox2
             // 
-            this.metroTile8.ActiveControl = null;
-            this.metroTile8.Location = new System.Drawing.Point(243, 375);
-            this.metroTile8.Name = "metroTile8";
-            this.metroTile8.Size = new System.Drawing.Size(283, 100);
-            this.metroTile8.TabIndex = 68;
-            this.metroTile8.Text = "Alterar Caso";
-            this.metroTile8.UseSelectable = true;
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(582, 39);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(206, 300);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 76;
+            this.pictureBox2.TabStop = false;
             // 
-            // metroTabPage1
+            // label3
             // 
-            this.metroTabPage1.Controls.Add(this.panel8);
-            this.metroTabPage1.Controls.Add(this.panel4);
-            this.metroTabPage1.Controls.Add(this.panel2);
-            this.metroTabPage1.Controls.Add(this.metroTile12);
-            this.metroTabPage1.Controls.Add(this.metroTile10);
-            this.metroTabPage1.Controls.Add(this.metroTile9);
-            this.metroTabPage1.Controls.Add(this.metroTile8);
-            this.metroTabPage1.Controls.Add(this.label2);
-            this.metroTabPage1.Controls.Add(this.label1);
-            this.metroTabPage1.HorizontalScrollbarBarColor = true;
-            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.HorizontalScrollbarSize = 10;
-            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(800, 482);
-            this.metroTabPage1.TabIndex = 0;
-            this.metroTabPage1.Text = "metroTabPage1";
-            this.metroTabPage1.VerticalScrollbarBarColor = true;
-            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.VerticalScrollbarSize = 10;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(80, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(126, 59);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "12:12";
             // 
-            // metroTile9
+            // panel5
             // 
-            this.metroTile9.ActiveControl = null;
-            this.metroTile9.Enabled = false;
-            this.metroTile9.Location = new System.Drawing.Point(21, 375);
-            this.metroTile9.Name = "metroTile9";
-            this.metroTile9.Size = new System.Drawing.Size(206, 100);
-            this.metroTile9.TabIndex = 70;
-            this.metroTile9.Text = "Tempo Logado\r\n\r\n\r\n12:21";
-            this.metroTile9.UseSelectable = true;
+            this.panel5.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel5.Controls.Add(this.label3);
+            this.panel5.Controls.Add(this.label5);
+            this.panel5.Location = new System.Drawing.Point(42, 366);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(206, 100);
+            this.panel5.TabIndex = 77;
             // 
-            // metroTile10
+            // label5
             // 
-            this.metroTile10.ActiveControl = null;
-            this.metroTile10.Enabled = false;
-            this.metroTile10.Location = new System.Drawing.Point(582, 19);
-            this.metroTile10.Name = "metroTile10";
-            this.metroTile10.Size = new System.Drawing.Size(206, 300);
-            this.metroTile10.TabIndex = 71;
-            this.metroTile10.Text = "metroTile10";
-            this.metroTile10.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.metroTile10.UseSelectable = true;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(4, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(96, 19);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Tempo logado";
             // 
-            // metroTile12
+            // panel7
             // 
-            this.metroTile12.ActiveControl = null;
-            this.metroTile12.Enabled = false;
-            this.metroTile12.Location = new System.Drawing.Point(582, 330);
-            this.metroTile12.Name = "metroTile12";
-            this.metroTile12.Size = new System.Drawing.Size(206, 145);
-            this.metroTile12.TabIndex = 73;
-            this.metroTile12.Text = "metroTile12\r\nsdds\r\nda\r\nda";
-            this.metroTile12.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.metroTile12.UseCustomForeColor = true;
-            this.metroTile12.UseSelectable = true;
+            this.panel7.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel7.Controls.Add(this.label7);
+            this.panel7.Location = new System.Drawing.Point(264, 366);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(283, 100);
+            this.panel7.TabIndex = 78;
             // 
-            // panel2
+            // label7
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.panel2.Controls.Add(this.panel6);
-            this.panel2.Location = new System.Drawing.Point(21, 163);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(505, 192);
-            this.panel2.TabIndex = 74;
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(3, 74);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(81, 19);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Alterar caso";
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel9.Controls.Add(this.label57);
+            this.panel9.Controls.Add(this.label60);
+            this.panel9.Controls.Add(this.label61);
+            this.panel9.Controls.Add(this.label62);
+            this.panel9.Controls.Add(this.label64);
+            this.panel9.Controls.Add(this.label65);
+            this.panel9.Location = new System.Drawing.Point(582, 339);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(206, 136);
+            this.panel9.TabIndex = 79;
+            // 
+            // bunifuElipse3
+            // 
+            this.bunifuElipse3.ElipseRadius = 6;
+            this.bunifuElipse3.TargetControl = this.panel2;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(293, 19);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(198, 21);
+            this.label4.TabIndex = 82;
+            this.label4.Text = "Anotações sobre o caso";
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel10.Controls.Add(this.label8);
+            this.panel10.Location = new System.Drawing.Point(582, 15);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(206, 27);
+            this.panel10.TabIndex = 80;
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.BackColor = System.Drawing.Color.Transparent;
+            this.label57.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.Location = new System.Drawing.Point(40, 13);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(0, 21);
+            this.label57.TabIndex = 84;
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.BackColor = System.Drawing.Color.Transparent;
+            this.label60.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label60.Location = new System.Drawing.Point(83, 97);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(0, 21);
+            this.label60.TabIndex = 82;
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.BackColor = System.Drawing.Color.Transparent;
+            this.label61.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label61.Location = new System.Drawing.Point(67, 55);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(0, 21);
+            this.label61.TabIndex = 81;
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.BackColor = System.Drawing.Color.Transparent;
+            this.label62.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label62.Location = new System.Drawing.Point(3, 97);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(84, 21);
+            this.label62.TabIndex = 80;
+            this.label62.Text = "Telefone :";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.BackColor = System.Drawing.Color.Transparent;
+            this.label64.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label64.Location = new System.Drawing.Point(5, 13);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(35, 21);
+            this.label64.TabIndex = 77;
+            this.label64.Text = "ID :";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.BackColor = System.Drawing.Color.Transparent;
+            this.label65.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label65.Location = new System.Drawing.Point(3, 55);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(65, 21);
+            this.label65.TabIndex = 78;
+            this.label65.Text = "Nome :";
+            // 
+            // bunifuTextbox1
+            // 
+            this.bunifuTextbox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
+            this.bunifuTextbox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox1.BackgroundImage")));
+            this.bunifuTextbox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuTextbox1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bunifuTextbox1.Icon = ((System.Drawing.Image)(resources.GetObject("bunifuTextbox1.Icon")));
+            this.bunifuTextbox1.Location = new System.Drawing.Point(-1, 42);
+            this.bunifuTextbox1.Name = "bunifuTextbox1";
+            this.bunifuTextbox1.Size = new System.Drawing.Size(48, 21);
+            this.bunifuTextbox1.TabIndex = 81;
+            this.bunifuTextbox1.text = "Bunifu TextBox";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(3, 4);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(92, 20);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Cliente atual";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(177)))), ((int)(((byte)(137)))));
+            this.label6.Location = new System.Drawing.Point(57, 8);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 15);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "AdvoGarcia";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // bunifuImageButton1
+            // 
+            this.bunifuImageButton1.BackColor = System.Drawing.Color.DarkCyan;
+            this.bunifuImageButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuImageButton1.Image")));
+            this.bunifuImageButton1.ImageActive = null;
+            this.bunifuImageButton1.Location = new System.Drawing.Point(88, 128);
+            this.bunifuImageButton1.Name = "bunifuImageButton1";
+            this.bunifuImageButton1.Size = new System.Drawing.Size(71, 71);
+            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bunifuImageButton1.TabIndex = 76;
+            this.bunifuImageButton1.TabStop = false;
+            this.bunifuImageButton1.Zoom = 10;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel4.Location = new System.Drawing.Point(42, 146);
+            this.panel4.Location = new System.Drawing.Point(63, 128);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(120, 69);
+            this.panel4.Size = new System.Drawing.Size(120, 70);
             this.panel4.TabIndex = 75;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel6.Location = new System.Drawing.Point(0, 187);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(505, 5);
-            this.panel6.TabIndex = 76;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.SystemColors.Control;
-            this.panel8.Location = new System.Drawing.Point(20, 163);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(5, 187);
-            this.panel8.TabIndex = 77;
             // 
             // Main
             // 
@@ -374,6 +594,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(976, 533);
+            this.Controls.Add(this.bunifuTextbox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.metroTile3);
             this.Controls.Add(this.metroTile7);
@@ -389,14 +610,26 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.metroTabControl1.ResumeLayout(false);
+            this.metroTabPage1.ResumeLayout(false);
+            this.metroTabPage1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.pnlTopo.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.metroTabPage1.ResumeLayout(false);
-            this.metroTabPage1.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -420,15 +653,33 @@
         private Bunifu.Framework.UI.BunifuDragControl drg3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroTabPage metroTabPage1;
-        private MetroFramework.Controls.MetroTile metroTile8;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private MetroFramework.Controls.MetroTile metroTile10;
-        private MetroFramework.Controls.MetroTile metroTile9;
-        private MetroFramework.Controls.MetroTile metroTile12;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel8;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse2;
+        private System.Windows.Forms.RichTextBox txtAnot;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label7;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label label65;
+        private Bunifu.Framework.UI.BunifuTextbox bunifuTextbox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
+        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private System.Windows.Forms.Panel panel4;
     }
 }
