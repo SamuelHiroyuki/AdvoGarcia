@@ -22,14 +22,15 @@ namespace AdvoGarcia.Classes
         public int QtdCasos { get; set; }
         public int PrecoHR { get; set; }
         public string Area { get; set; }
+        public DateTime ani { get; set; }
         public int Id_Caso { get; set; }
 
         public void Cadastrar() {
             SqlConnection cn = Conexao.conectar();
             SqlCommand cmd = cn.CreateCommand();
 
-            cmd.CommandText = "insert into tbAdvogado(Nome_Adv, End_Adv, Email_Adv, Foto_Adv, User_Adv, Pass_Adv, CPF_Adv, Tel_Adv, QtdCasos, PrecoHR, Area)" +
-                "values (@nome, @end, @email, @foto, @user, @pass, @cpf, @tel, @qtd, @prec, @area)";
+            cmd.CommandText = "insert into tbAdvogado(Nome_Adv, End_Adv, Email_Adv, Foto_Adv, User_Adv, Pass_Adv, CPF_Adv, Tel_Adv, QtdCasos, PrecoHR, Ani_Adv, Area)" +
+                "values (@nome, @end, @email, @foto, @user, @pass, @cpf, @tel, @qtd, @prec, @ani, @area)";
 
             cmd.Parameters.Add("@nome", SqlDbType.VarChar, 50).Value = this.Nome;
             cmd.Parameters.Add("@end", SqlDbType.VarChar, 50).Value = this.Endereco;
@@ -41,6 +42,7 @@ namespace AdvoGarcia.Classes
             cmd.Parameters.Add("@cpf", SqlDbType.VarChar, 14).Value = this.CPF;
             cmd.Parameters.Add("@qtd", SqlDbType.Int).Value = this.QtdCasos;
             cmd.Parameters.Add("@prec", SqlDbType.Int).Value = this.PrecoHR;
+            cmd.Parameters.Add("@ani", SqlDbType.DateTime2).Value = this.ani;
             cmd.Parameters.Add("@area", SqlDbType.VarChar, 50).Value = this.Area;
 
             cmd.ExecuteNonQuery();

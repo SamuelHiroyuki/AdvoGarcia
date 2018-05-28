@@ -27,6 +27,7 @@ create table tbAdvogado(
 	Tel_Adv varchar(15) not null,
 	QtdCasos int not null,
 	PrecoHR int not null,
+	Ani_Adv datetime not null,
 	Area varchar(50) not null,
 	ID_Caso int foreign key references tbCaso(ID_Caso)
 );
@@ -55,12 +56,12 @@ values('Um pão', 0, 'Andamento'),
 go
 
 insert into tbAdvogado(Nome_Adv, End_Adv, Email_Adv, Foto_Adv, User_Adv, Pass_Adv, CPF_Adv, 
-Tel_Adv, QtdCasos, PrecoHR, Area, ID_Caso)
-values('1', 'Rua1', 'email1@email.email', 'C:1', 'Teste', '123', '12332112312', '12543211234', 12, 2, 'Mediação', 1)
+Tel_Adv, QtdCasos, PrecoHR, Ani_Adv, Area, ID_Caso)
+values('1', 'Rua1', 'email1@email.email', 'C:1', 'Teste', '123', '12332112312', '12543211234', 12, 2, '1940-10-09', 'Mediação', 1)
 go
 insert into tbAdvogado(Nome_Adv, End_Adv, Email_Adv, Foto_Adv, User_Adv, Pass_Adv, CPF_Adv, 
-Tel_Adv, QtdCasos, PrecoHR, Area)
-values('2', 'Rua2', 'email2@email.email', 'C:2', 'Teste2', '123', '12332112312', '12543211234', 12, 2, 'Direito Civil')
+Tel_Adv, QtdCasos, PrecoHR, Ani_Adv, Area)
+values('2', 'Rua2', 'email2@email.email', 'C:2', 'Teste2', '123', '12332112312', '12543211234', 12, 2, '2012-11-19', 'Direito Civil')
 go
 
 insert into tbCliente(Nome_Cli, End_Cli, Email_Cli, Foto_Cli, User_Cli, Pass_Cli, CPF_Cli, Tel_Cli,

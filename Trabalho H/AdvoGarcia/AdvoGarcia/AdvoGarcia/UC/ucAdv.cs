@@ -12,9 +12,13 @@ namespace AdvoGarcia.UC
 {
     public partial class ucAdv : UserControl
     {
-        public ucAdv()
+        public ucAdv(bool r)
         {
             InitializeComponent();
+            if (r)
+            {
+
+            }
         }
     }
 }

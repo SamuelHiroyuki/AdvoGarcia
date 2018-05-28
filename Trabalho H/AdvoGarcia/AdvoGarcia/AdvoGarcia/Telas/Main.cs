@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdvoGarcia.UC;
 
 namespace AdvoGarcia.Telas
 {
@@ -15,6 +16,7 @@ namespace AdvoGarcia.Telas
         public Main()
         {
             InitializeComponent();
+            tabControl.SelectedIndex = 0;
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -25,6 +27,11 @@ namespace AdvoGarcia.Telas
         private void btnCadAdv_Click(object sender, EventArgs e)
         {
             tabControl.SelectedIndex = 1;
+            tabPageCadAdv.Controls.Clear();
+            ucAdv uca = new ucAdv();
+            tabPageCadAdv.Controls.Add(uca);
+            uca.Location = new Point(5, 0);
+            uca.Show();
         }
     }
 }
