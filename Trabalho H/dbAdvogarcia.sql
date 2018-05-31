@@ -27,8 +27,9 @@ create table tbAdvogado(
 	Tel_Adv varchar(15) not null,
 	QtdCasos int not null,
 	PrecoHR int not null,
-	Ani_Adv datetime not null,
+	Ani_Adv varchar(250) not null,
 	Area varchar(50) not null,
+	LastLog_Adv datetime,
 	ID_Caso int foreign key references tbCaso(ID_Caso)
 );
 
@@ -56,8 +57,8 @@ values('Um pão', 0, 'Andamento'),
 go
 
 insert into tbAdvogado(Nome_Adv, End_Adv, Email_Adv, Foto_Adv, User_Adv, Pass_Adv, CPF_Adv, 
-Tel_Adv, QtdCasos, PrecoHR, Ani_Adv, Area, ID_Caso)
-values('1', 'Rua1', 'email1@email.email', 'C:1', 'Teste', '123', '12332112312', '12543211234', 12, 2, '1940-10-09', 'Mediação', 1)
+Tel_Adv, QtdCasos, PrecoHR, Ani_Adv, Area, LastLog_Adv, ID_Caso)
+values('1', 'Rua1', 'email1@email.email', 'C:1', 'Teste', '123', '12332112312', '12543211234', 12, 2, '1940-10-09', 'Mediação', '1940-10-09',2)
 go
 insert into tbAdvogado(Nome_Adv, End_Adv, Email_Adv, Foto_Adv, User_Adv, Pass_Adv, CPF_Adv, 
 Tel_Adv, QtdCasos, PrecoHR, Ani_Adv, Area)

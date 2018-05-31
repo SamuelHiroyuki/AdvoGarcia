@@ -87,8 +87,6 @@ namespace AdvoGarcia.Classes
                 this.Id = (int)dr[0];
                 this.Nome = dr[1].ToString();
                 this.Telefone = dr[8].ToString();
-                this.Email = dr[3].ToString();
-                this.Endereco = dr[2].ToString();
                 this.Foto = dr[4].ToString();
             }
             cn.Close();

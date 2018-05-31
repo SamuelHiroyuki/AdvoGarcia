@@ -22,7 +22,8 @@ namespace AdvoGarcia.Classes
         public int QtdCasos { get; set; }
         public int PrecoHR { get; set; }
         public string Area { get; set; }
-        public DateTime ani { get; set; }
+        public string Ani { get; set; }
+        public string LastLog { get; set; }
         public int Id_Caso { get; set; }
 
         public void Cadastrar() {
@@ -42,7 +43,7 @@ namespace AdvoGarcia.Classes
             cmd.Parameters.Add("@cpf", SqlDbType.VarChar, 14).Value = this.CPF;
             cmd.Parameters.Add("@qtd", SqlDbType.Int).Value = this.QtdCasos;
             cmd.Parameters.Add("@prec", SqlDbType.Int).Value = this.PrecoHR;
-            cmd.Parameters.Add("@ani", SqlDbType.DateTime2).Value = this.ani;
+            cmd.Parameters.Add("@ani", SqlDbType.VarChar, 250).Value = this.Ani;
             cmd.Parameters.Add("@area", SqlDbType.VarChar, 50).Value = this.Area;
 
             cmd.ExecuteNonQuery();
@@ -71,7 +72,9 @@ namespace AdvoGarcia.Classes
                 this.Foto = dr[4].ToString();
                 this.QtdCasos = (int)dr[9];
                 this.PrecoHR = (int)dr[10];
-                this.Area = dr[11].ToString();
+                this.Ani = dr[11].ToString();
+                this.Area = dr[12].ToString();
+                this.LastLog = dr[13].ToString();
                 try { this.Id_Caso = (int)dr["Id_Caso"]; }
                 catch (Exception){}
                 return true;
@@ -104,7 +107,7 @@ namespace AdvoGarcia.Classes
             SqlCommand cmd = cn.CreateCommand();
 
             cmd.CommandText = "update tbAdvogado set Nome_Adv = @nome, End_Adv = @end, Email_Adv = @email, Foto_Adv = @foto, " +
-                "User_Adv = @user, Pass_Adv = @pass, CPF_Adv = @cpf, Tel_Adv = @tel, QtdCasos = @qtd, PrecoHR = @prec, Area = @area " +
+                "User_Adv = @user, Pass_Adv = @pass, CPF_Adv = @cpf, Tel_Adv = @tel, QtdCasos = @qtd, PrecoHR = @prec, Ani_Adv = @ani, Area = @area " +
                 "where ID_Advogado = @id;";
 
             cmd.Parameters.Add("@id", SqlDbType.Int).Value = this.Id;
@@ -118,6 +121,7 @@ namespace AdvoGarcia.Classes
             cmd.Parameters.Add("@cpf", SqlDbType.VarChar, 14).Value = this.CPF;
             cmd.Parameters.Add("@qtd", SqlDbType.Int).Value = this.QtdCasos;
             cmd.Parameters.Add("@prec", SqlDbType.Int).Value = this.PrecoHR;
+            cmd.Parameters.Add("@ani", SqlDbType.VarChar, 250).Value = this.Ani;
             cmd.Parameters.Add("@area", SqlDbType.VarChar, 50).Value = this.Area;
 
             cmd.ExecuteNonQuery();

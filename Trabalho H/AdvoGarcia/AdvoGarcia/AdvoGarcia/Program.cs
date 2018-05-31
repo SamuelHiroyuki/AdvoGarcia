@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdvoGarcia.Telas;
 
 namespace AdvoGarcia
 {
@@ -16,7 +17,7 @@ namespace AdvoGarcia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Telas.Main());
+            Application.Run(new frmSplash());
         }
     }
 }

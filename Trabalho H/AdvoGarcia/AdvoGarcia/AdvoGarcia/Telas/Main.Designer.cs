@@ -1,6 +1,6 @@
 ﻿namespace AdvoGarcia.Telas
 {
-    partial class Main
+    partial class frmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panel3 = new System.Windows.Forms.Panel();
             this.tabControl = new MetroFramework.Controls.MetroTabControl();
             this.tabPageHome = new MetroFramework.Controls.MetroTabPage();
@@ -63,6 +63,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblHome = new System.Windows.Forms.Label();
             this.tabPageCadAdv = new MetroFramework.Controls.MetroTabPage();
+            this.btnVoltar = new MetroFramework.Controls.MetroTile();
             this.btnMin = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
             this.pnlTopo = new System.Windows.Forms.Panel();
@@ -82,6 +83,7 @@
             this.btnQuery = new MetroFramework.Controls.MetroTile();
             this.btnHome = new MetroFramework.Controls.MetroTile();
             this.btnCadAdv = new MetroFramework.Controls.MetroTile();
+            this.tmrTempLog = new System.Windows.Forms.Timer(this.components);
             this.tabControl.SuspendLayout();
             this.tabPageHome.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -91,6 +93,7 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnSaveAnot)).BeginInit();
             this.panel2.SuspendLayout();
+            this.tabPageCadAdv.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.pnlTopo.SuspendLayout();
@@ -113,7 +116,7 @@
             this.tabControl.Controls.Add(this.tabPageCadAdv);
             this.tabControl.Location = new System.Drawing.Point(159, 8);
             this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 1;
+            this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(826, 533);
             this.tabControl.TabIndex = 36;
             this.tabControl.UseSelectable = true;
@@ -180,6 +183,7 @@
             this.btnPECaso.Name = "btnPECaso";
             this.btnPECaso.Size = new System.Drawing.Size(283, 100);
             this.btnPECaso.TabIndex = 82;
+            this.btnPECaso.TabStop = false;
             this.btnPECaso.Text = "Encerrar Caso";
             this.btnPECaso.UseCustomBackColor = true;
             this.btnPECaso.UseSelectable = true;
@@ -329,11 +333,11 @@
             this.lblTempo.BackColor = System.Drawing.Color.Transparent;
             this.lblTempo.Font = new System.Drawing.Font("Segoe UI", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTempo.ForeColor = System.Drawing.Color.White;
-            this.lblTempo.Location = new System.Drawing.Point(80, 41);
+            this.lblTempo.Location = new System.Drawing.Point(64, 41);
             this.lblTempo.Name = "lblTempo";
-            this.lblTempo.Size = new System.Drawing.Size(126, 59);
+            this.lblTempo.Size = new System.Drawing.Size(150, 59);
             this.lblTempo.TabIndex = 0;
-            this.lblTempo.Text = "12:12";
+            this.lblTempo.Text = "12 : 12";
             // 
             // label5
             // 
@@ -350,7 +354,6 @@
             // picCli
             // 
             this.picCli.BackColor = System.Drawing.Color.White;
-            this.picCli.Image = ((System.Drawing.Image)(resources.GetObject("picCli.Image")));
             this.picCli.Location = new System.Drawing.Point(607, 27);
             this.picCli.Name = "picCli";
             this.picCli.Size = new System.Drawing.Size(206, 327);
@@ -448,12 +451,12 @@
             this.lblHome.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHome.Location = new System.Drawing.Point(14, 15);
             this.lblHome.Name = "lblHome";
-            this.lblHome.Size = new System.Drawing.Size(388, 39);
+            this.lblHome.Size = new System.Drawing.Size(0, 39);
             this.lblHome.TabIndex = 66;
-            this.lblHome.Text = "Seja bem-vindo Samuel";
             // 
             // tabPageCadAdv
             // 
+            this.tabPageCadAdv.Controls.Add(this.btnVoltar);
             this.tabPageCadAdv.HorizontalScrollbarBarColor = true;
             this.tabPageCadAdv.HorizontalScrollbarHighlightOnWheel = false;
             this.tabPageCadAdv.HorizontalScrollbarSize = 10;
@@ -465,6 +468,21 @@
             this.tabPageCadAdv.VerticalScrollbarBarColor = true;
             this.tabPageCadAdv.VerticalScrollbarHighlightOnWheel = false;
             this.tabPageCadAdv.VerticalScrollbarSize = 10;
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.ActiveControl = null;
+            this.btnVoltar.BackColor = System.Drawing.Color.DarkCyan;
+            this.btnVoltar.Location = new System.Drawing.Point(5, 0);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(185, 60);
+            this.btnVoltar.TabIndex = 52;
+            this.btnVoltar.TabStop = false;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.TileImage = ((System.Drawing.Image)(resources.GetObject("btnVoltar.TileImage")));
+            this.btnVoltar.UseCustomBackColor = true;
+            this.btnVoltar.UseSelectable = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
             // 
             // btnMin
             // 
@@ -592,10 +610,12 @@
             this.btnAlt.Name = "btnAlt";
             this.btnAlt.Size = new System.Drawing.Size(168, 68);
             this.btnAlt.Style = MetroFramework.MetroColorStyle.Teal;
-            this.btnAlt.TabIndex = 42;
+            this.btnAlt.TabIndex = 4;
+            this.btnAlt.TabStop = false;
             this.btnAlt.Text = "Alterar Dados";
             this.btnAlt.UseCustomBackColor = true;
             this.btnAlt.UseSelectable = true;
+            this.btnAlt.Click += new System.EventHandler(this.btnAlt_Click);
             // 
             // btnLogout
             // 
@@ -605,7 +625,8 @@
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(168, 51);
             this.btnLogout.Style = MetroFramework.MetroColorStyle.Lime;
-            this.btnLogout.TabIndex = 44;
+            this.btnLogout.TabIndex = 5;
+            this.btnLogout.TabStop = false;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseCustomBackColor = true;
             this.btnLogout.UseSelectable = true;
@@ -618,7 +639,8 @@
             this.btnCadCli.Name = "btnCadCli";
             this.btnCadCli.Size = new System.Drawing.Size(168, 68);
             this.btnCadCli.Style = MetroFramework.MetroColorStyle.Teal;
-            this.btnCadCli.TabIndex = 46;
+            this.btnCadCli.TabIndex = 2;
+            this.btnCadCli.TabStop = false;
             this.btnCadCli.Text = "Cadastro Cliente";
             this.btnCadCli.UseCustomBackColor = true;
             this.btnCadCli.UseSelectable = true;
@@ -631,7 +653,8 @@
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(168, 68);
             this.btnQuery.Style = MetroFramework.MetroColorStyle.Teal;
-            this.btnQuery.TabIndex = 45;
+            this.btnQuery.TabIndex = 3;
+            this.btnQuery.TabStop = false;
             this.btnQuery.Text = "Consulta";
             this.btnQuery.UseCustomBackColor = true;
             this.btnQuery.UseSelectable = true;
@@ -643,7 +666,8 @@
             this.btnHome.Location = new System.Drawing.Point(0, 65);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(84, 77);
-            this.btnHome.TabIndex = 41;
+            this.btnHome.TabIndex = 0;
+            this.btnHome.TabStop = false;
             this.btnHome.Text = "Home";
             this.btnHome.UseCustomBackColor = true;
             this.btnHome.UseSelectable = true;
@@ -657,13 +681,20 @@
             this.btnCadAdv.Name = "btnCadAdv";
             this.btnCadAdv.Size = new System.Drawing.Size(168, 68);
             this.btnCadAdv.Style = MetroFramework.MetroColorStyle.Teal;
-            this.btnCadAdv.TabIndex = 43;
+            this.btnCadAdv.TabIndex = 1;
+            this.btnCadAdv.TabStop = false;
             this.btnCadAdv.Text = "Cadastro Advogado";
             this.btnCadAdv.UseCustomBackColor = true;
             this.btnCadAdv.UseSelectable = true;
             this.btnCadAdv.Click += new System.EventHandler(this.btnCadAdv_Click);
             // 
-            // Main
+            // tmrTempLog
+            // 
+            this.tmrTempLog.Enabled = true;
+            this.tmrTempLog.Interval = 1000;
+            this.tmrTempLog.Tick += new System.EventHandler(this.tmrTempLog_Tick);
+            // 
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -674,7 +705,7 @@
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.tabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Main";
+            this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.tabControl.ResumeLayout(false);
@@ -691,6 +722,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnSaveAnot)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tabPageCadAdv.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.pnlTopo.ResumeLayout(false);
@@ -755,5 +787,7 @@
         private MetroFramework.Controls.MetroTile btnQuery;
         private MetroFramework.Controls.MetroTile btnHome;
         private MetroFramework.Controls.MetroTile btnCadAdv;
+        private MetroFramework.Controls.MetroTile btnVoltar;
+        private System.Windows.Forms.Timer tmrTempLog;
     }
 }

@@ -11,7 +11,7 @@ using AdvoGarcia.Classes;
 
 namespace AdvoGarcia.Telas
 {
-    public partial class frmMain : Form
+    public partial class antigoMain : Form
     {
         //-------------------------------//-------------------------------//-------------------------------//-------------------------------
         int i = 0;
@@ -22,7 +22,7 @@ namespace AdvoGarcia.Telas
         Caso casoadv;
         //-------------------------------//-------------------------------//-------------------------------//-------------------------------
 
-        public frmMain(Advogado aa)
+        public antigoMain(Advogado aa)
         {
             atuala = aa;
             //InitializeComponent();
@@ -37,7 +37,7 @@ namespace AdvoGarcia.Telas
             btnAltC.Enabled = false;
         }
 
-        public frmMain(Cliente cc)
+        public antigoMain(Cliente cc)
         {
             atualc = cc;
             //InitializeComponent();
