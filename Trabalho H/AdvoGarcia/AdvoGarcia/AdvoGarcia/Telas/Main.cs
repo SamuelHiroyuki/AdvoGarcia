@@ -88,13 +88,23 @@ namespace AdvoGarcia.Telas
                 seg = 0;
                 min++;
             }
+
+            if (min < 10)
+            {
+                lblTempo.Location = new Point(56, 15);
+            }
+            else
+            {
+                lblTempo.Location = new Point(43, 15);
+            }
+
             if (seg < 9)
             {
                 lblTempo.Text = min.ToString() + " : " + "0" + seg.ToString();
             }
             else
             {
-                lblTempo.Text = min.ToString() + " : " + seg.ToString();
+                lblTempo.Text = min.ToString() +  " : " + seg.ToString();
             }
         }
 
