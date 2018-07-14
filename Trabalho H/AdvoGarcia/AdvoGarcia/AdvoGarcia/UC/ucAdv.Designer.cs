@@ -279,7 +279,6 @@
             this.txtNome.MaxLength = 50;
             this.txtNome.Name = "txtNome";
             this.txtNome.PasswordChar = '\0';
-            this.txtNome.PromptText = "Digite o nome";
             this.txtNome.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtNome.SelectedText = "";
             this.txtNome.SelectionLength = 0;
@@ -375,7 +374,6 @@
             this.txtEnd.MaxLength = 50;
             this.txtEnd.Name = "txtEnd";
             this.txtEnd.PasswordChar = '\0';
-            this.txtEnd.PromptText = "Digite o endereço";
             this.txtEnd.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtEnd.SelectedText = "";
             this.txtEnd.SelectionLength = 0;
@@ -408,7 +406,6 @@
             this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
-            this.txtEmail.PromptText = "Digite o email";
             this.txtEmail.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtEmail.SelectedText = "";
             this.txtEmail.SelectionLength = 0;
@@ -441,7 +438,6 @@
             this.txtUser.MaxLength = 20;
             this.txtUser.Name = "txtUser";
             this.txtUser.PasswordChar = '\0';
-            this.txtUser.PromptText = "Digite o nome de usuário";
             this.txtUser.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtUser.SelectedText = "";
             this.txtUser.SelectionLength = 0;
@@ -474,7 +470,6 @@
             this.txtPass.MaxLength = 20;
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '\0';
-            this.txtPass.PromptText = "Digite a senha";
             this.txtPass.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPass.SelectedText = "";
             this.txtPass.SelectionLength = 0;

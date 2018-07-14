@@ -33,20 +33,22 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.tabControl = new MetroFramework.Controls.MetroTabControl();
             this.tabPageHome = new MetroFramework.Controls.MetroTabPage();
+            this.lblHome = new System.Windows.Forms.Label();
+            this.lblLastLog = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnSaveAnot = new Bunifu.Framework.UI.BunifuImageButton();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMsg = new System.Windows.Forms.RichTextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.lblTempo = new System.Windows.Forms.Label();
             this.metroTile4 = new MetroFramework.Controls.MetroTile();
             this.metroTile6 = new MetroFramework.Controls.MetroTile();
-            this.metroTile3 = new MetroFramework.Controls.MetroTile();
             this.picAdv = new System.Windows.Forms.PictureBox();
             this.tabPageCadAdv = new MetroFramework.Controls.MetroTabPage();
             this.panel15 = new System.Windows.Forms.Panel();
@@ -71,7 +73,6 @@
             this.drg2 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.ellipseForm = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.drg3 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.elipseIco = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.elipseAnot = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnAlt = new MetroFramework.Controls.MetroTile();
@@ -81,9 +82,6 @@
             this.btnHome = new MetroFramework.Controls.MetroTile();
             this.btnCadAdv = new MetroFramework.Controls.MetroTile();
             this.tmrTempLog = new System.Windows.Forms.Timer(this.components);
-            this.lblHome = new System.Windows.Forms.Label();
-            this.lblLastLog = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPageHome.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -143,6 +141,41 @@
             this.tabPageHome.VerticalScrollbarHighlightOnWheel = false;
             this.tabPageHome.VerticalScrollbarSize = 10;
             // 
+            // lblHome
+            // 
+            this.lblHome.AutoSize = true;
+            this.lblHome.BackColor = System.Drawing.Color.White;
+            this.lblHome.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHome.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblHome.Location = new System.Drawing.Point(11, 16);
+            this.lblHome.Name = "lblHome";
+            this.lblHome.Size = new System.Drawing.Size(396, 39);
+            this.lblHome.TabIndex = 94;
+            this.lblHome.Text = "Seja bem-vindo *Nome*";
+            // 
+            // lblLastLog
+            // 
+            this.lblLastLog.AutoSize = true;
+            this.lblLastLog.BackColor = System.Drawing.Color.White;
+            this.lblLastLog.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLastLog.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblLastLog.Location = new System.Drawing.Point(203, 64);
+            this.lblLastLog.Name = "lblLastLog";
+            this.lblLastLog.Size = new System.Drawing.Size(0, 21);
+            this.lblLastLog.TabIndex = 96;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.Location = new System.Drawing.Point(38, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(159, 21);
+            this.label2.TabIndex = 95;
+            this.label2.Text = "Última vez logado :";
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkCyan;
@@ -164,6 +197,14 @@
             this.btnSaveAnot.TabIndex = 76;
             this.btnSaveAnot.TabStop = false;
             this.btnSaveAnot.Zoom = 10;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel6.Location = new System.Drawing.Point(42, 473);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(564, 2);
+            this.panel6.TabIndex = 76;
             // 
             // panel2
             // 
@@ -208,14 +249,6 @@
             this.txtMsg.TabIndex = 81;
             this.txtMsg.Text = "";
             // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel6.Location = new System.Drawing.Point(42, 473);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(564, 2);
-            this.panel6.TabIndex = 76;
-            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.SystemColors.Control;
@@ -232,7 +265,6 @@
             this.panel13.Controls.Add(this.lblTempo);
             this.panel13.Controls.Add(this.metroTile4);
             this.panel13.Controls.Add(this.metroTile6);
-            this.panel13.Controls.Add(this.metroTile3);
             this.panel13.Controls.Add(this.picAdv);
             this.panel13.Location = new System.Drawing.Point(645, 0);
             this.panel13.Name = "panel13";
@@ -245,7 +277,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(46, 2);
+            this.label5.Location = new System.Drawing.Point(46, 7);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 13);
             this.label5.TabIndex = 1;
@@ -257,7 +289,7 @@
             this.lblTempo.BackColor = System.Drawing.Color.Transparent;
             this.lblTempo.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTempo.ForeColor = System.Drawing.Color.White;
-            this.lblTempo.Location = new System.Drawing.Point(43, 15);
+            this.lblTempo.Location = new System.Drawing.Point(43, 23);
             this.lblTempo.Name = "lblTempo";
             this.lblTempo.Size = new System.Drawing.Size(86, 32);
             this.lblTempo.TabIndex = 0;
@@ -281,7 +313,7 @@
             // 
             this.metroTile6.ActiveControl = null;
             this.metroTile6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(177)))), ((int)(((byte)(137)))));
-            this.metroTile6.Location = new System.Drawing.Point(0, 270);
+            this.metroTile6.Location = new System.Drawing.Point(0, 344);
             this.metroTile6.Name = "metroTile6";
             this.metroTile6.Size = new System.Drawing.Size(168, 68);
             this.metroTile6.Style = MetroFramework.MetroColorStyle.Teal;
@@ -291,27 +323,13 @@
             this.metroTile6.UseCustomBackColor = true;
             this.metroTile6.UseSelectable = true;
             // 
-            // metroTile3
-            // 
-            this.metroTile3.ActiveControl = null;
-            this.metroTile3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(177)))), ((int)(((byte)(137)))));
-            this.metroTile3.Location = new System.Drawing.Point(0, 344);
-            this.metroTile3.Name = "metroTile3";
-            this.metroTile3.Size = new System.Drawing.Size(168, 68);
-            this.metroTile3.Style = MetroFramework.MetroColorStyle.Teal;
-            this.metroTile3.TabIndex = 2;
-            this.metroTile3.TabStop = false;
-            this.metroTile3.Text = "Funcionários";
-            this.metroTile3.UseCustomBackColor = true;
-            this.metroTile3.UseSelectable = true;
-            // 
             // picAdv
             // 
             this.picAdv.BackColor = System.Drawing.SystemColors.Control;
             this.picAdv.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picAdv.Location = new System.Drawing.Point(-1, 47);
+            this.picAdv.Location = new System.Drawing.Point(0, 64);
             this.picAdv.Name = "picAdv";
-            this.picAdv.Size = new System.Drawing.Size(168, 217);
+            this.picAdv.Size = new System.Drawing.Size(168, 274);
             this.picAdv.TabIndex = 88;
             this.picAdv.TabStop = false;
             // 
@@ -483,6 +501,7 @@
             this.btnMin.TabIndex = 2;
             this.btnMin.TabStop = false;
             this.btnMin.Zoom = 10;
+            this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
             // 
             // btnClose
             // 
@@ -496,6 +515,7 @@
             this.btnClose.TabIndex = 0;
             this.btnClose.TabStop = false;
             this.btnClose.Zoom = 10;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // pnlTopo
             // 
@@ -565,15 +585,10 @@
             this.drg3.TargetControl = null;
             this.drg3.Vertical = true;
             // 
-            // elipseIco
-            // 
-            this.elipseIco.ElipseRadius = 3;
-            this.elipseIco.TargetControl = this;
-            // 
             // elipseAnot
             // 
             this.elipseAnot.ElipseRadius = 6;
-            this.elipseAnot.TargetControl = this;
+            this.elipseAnot.TargetControl = this.panel4;
             // 
             // panel7
             // 
@@ -617,6 +632,7 @@
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseCustomBackColor = true;
             this.btnLogout.UseSelectable = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnCadCli
             // 
@@ -681,41 +697,6 @@
             this.tmrTempLog.Interval = 1000;
             this.tmrTempLog.Tick += new System.EventHandler(this.tmrTempLog_Tick);
             // 
-            // lblHome
-            // 
-            this.lblHome.AutoSize = true;
-            this.lblHome.BackColor = System.Drawing.Color.White;
-            this.lblHome.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHome.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblHome.Location = new System.Drawing.Point(11, 16);
-            this.lblHome.Name = "lblHome";
-            this.lblHome.Size = new System.Drawing.Size(396, 39);
-            this.lblHome.TabIndex = 94;
-            this.lblHome.Text = "Seja bem-vindo *Nome*";
-            // 
-            // lblLastLog
-            // 
-            this.lblLastLog.AutoSize = true;
-            this.lblLastLog.BackColor = System.Drawing.Color.White;
-            this.lblLastLog.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastLog.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblLastLog.Location = new System.Drawing.Point(203, 64);
-            this.lblLastLog.Name = "lblLastLog";
-            this.lblLastLog.Size = new System.Drawing.Size(0, 21);
-            this.lblLastLog.TabIndex = 96;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(38, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(159, 21);
-            this.label2.TabIndex = 95;
-            this.label2.Text = "Última vez logado :";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -769,7 +750,6 @@
         private Bunifu.Framework.UI.BunifuElipse ellipseForm;
         private Bunifu.Framework.UI.BunifuDragControl drg3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Bunifu.Framework.UI.BunifuElipse elipseIco;
         private Bunifu.Framework.UI.BunifuElipse elipseAnot;
         private System.Windows.Forms.Label label6;
         private MetroFramework.Controls.MetroTabPage tabPageCadAdv;
@@ -784,7 +764,6 @@
         private System.Windows.Forms.Timer tmrTempLog;
         private MetroFramework.Controls.MetroTabPage tabPageHome;
         private System.Windows.Forms.Panel panel13;
-        private MetroFramework.Controls.MetroTile metroTile3;
         private MetroFramework.Controls.MetroTile metroTile4;
         private MetroFramework.Controls.MetroTile metroTile6;
         private System.Windows.Forms.Panel panel15;

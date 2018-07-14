@@ -7,14 +7,6 @@ go
 use dbAdvoGarcia;
 
 go
-create table tbCaso(
-	ID_Caso int primary key identity(1,1),
-	Status_Caso varchar(10) not null,
-	Descricao_Caso varchar(256) not null,
-	Anot varchar(256),
-	TempoGasto int not null
-);
-go
 create table tbAdvogado(
 	ID_Advogado int primary key identity(1,1),
 	Nome_Adv varchar(50) not null,
@@ -30,7 +22,14 @@ create table tbAdvogado(
 	Ani_Adv varchar(250) not null,
 	Area varchar(50) not null,
 	LastLog_Adv datetime,
-	ID_Caso int foreign key references tbCaso(ID_Caso)
+);
+
+go
+create table tbCaso(
+	ID_Caso int primary key identity(1,1),
+	Status_Caso varchar(10) not null,
+	Descricao_Caso varchar(256) not null,
+	ID_Advogado int foreign key references tbAdvogado(ID_Advogado)
 );
 
 go
@@ -51,14 +50,16 @@ create table tbCliente(
 
 go
 
-insert into tbCaso(Descricao_Caso, TempoGasto, Status_Caso)
-values('Um pão', 0, 'Andamento'),
-('Caso 2', 0, 'Andamento')
+insert into tbCaso(Descricao_Caso, Status_Caso)
+values('Um pão', 'Andamento')
+go
+insert into tbCaso(Descricao_Caso, Status_Caso, ID_Advogado)
+values('Caso 2', 'Andamento', 1)
 go
 
 insert into tbAdvogado(Nome_Adv, End_Adv, Email_Adv, Foto_Adv, User_Adv, Pass_Adv, CPF_Adv, 
-Tel_Adv, QtdCasos, PrecoHR, Ani_Adv, Area, LastLog_Adv, ID_Caso)
-values('1', 'Rua1', 'email1@email.email', 'C:1', 'Teste', '123', '12332112312', '12543211234', 12, 2, '1940-10-09', 'Mediação', '1940-10-09',2)
+Tel_Adv, QtdCasos, PrecoHR, Ani_Adv, Area, LastLog_Adv)
+values('1', 'Rua1', 'email1@email.email', 'C:1', 'Teste', '123', '12332112312', '12543211234', 12, 2, '1940-10-09', 'Mediação', '1940-10-09')
 go
 insert into tbAdvogado(Nome_Adv, End_Adv, Email_Adv, Foto_Adv, User_Adv, Pass_Adv, CPF_Adv, 
 Tel_Adv, QtdCasos, PrecoHR, Ani_Adv, Area)

@@ -13,7 +13,6 @@ namespace AdvoGarcia.UC
 {
     public partial class ucAdv : UserControl
     {
-        int i = 0;
         string fileName;
         OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG|*.jpg", ValidateNames = true, Multiselect = false };
         Advogado a;
@@ -157,6 +156,27 @@ namespace AdvoGarcia.UC
                 cboArea.SelectedIndex = -1;
                 lblImgPath.Text = string.Empty;
                 fileName = string.Empty;
+            }
+            else
+            {
+                txtNome.Text = a.Nome.ToString();
+                txtEnd.Text = a.Endereco.ToString();
+                txtCPF.Text = a.CPF.ToString();
+                txtTel.Text = a.Telefone.ToString();
+                txtEmail.Text = a.Email.ToString();
+                dateNasci.Text = a.Ani.ToString();
+                txtUser.Text = a.User.ToString();
+                txtPass.Text = a.Pass.ToString();
+                nudPrec.Value = Convert.ToUInt32(a.PrecoHR);
+                nudQtdC.Value = Convert.ToUInt32(a.QtdCasos);
+                try
+                {
+                    picAdv.Image = Image.FromFile(a.Foto);
+                }
+                catch (Exception) { }
+                cboArea.SelectedIndex = cboArea.FindStringExact(a.Area.ToString());
+                lblImgPath.Text = a.Foto.ToString();
+                cboArea.SelectedIndex = cboArea.Items.IndexOf(a.Area);
             }
         }
     }

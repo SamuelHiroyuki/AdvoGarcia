@@ -66,6 +66,25 @@ namespace AdvoGarcia.Telas
             tabControl.SelectedIndex = 0;
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            frmLogin login = new frmLogin();
+            atuala = null;
+            atualc = null;
+            this.Hide();
+            login.ShowDialog();
+        }
+
         private void btnAlt_Click(object sender, EventArgs e)
         {
             tabControl.SelectedIndex = 1;
@@ -98,7 +117,7 @@ namespace AdvoGarcia.Telas
                 lblTempo.Location = new Point(43, 15);
             }
 
-            if (seg < 9)
+            if (seg < 10)
             {
                 lblTempo.Text = min.ToString() + " : " + "0" + seg.ToString();
             }

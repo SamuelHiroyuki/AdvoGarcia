@@ -103,6 +103,12 @@
     <Compile Include="UC\ucAdv.Designer.cs">
       <DependentUpon>ucAdv.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\ucCli.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucCli.Designer.cs">
+      <DependentUpon>ucCli.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\ucCustomSaveBtn.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\ucAdv.resx">
       <DependentUpon>ucAdv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucCli.resx">
+      <DependentUpon>ucCli.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\ucCustomSaveBtn.resx">
       <DependentUpon>ucCustomSaveBtn.cs</DependentUpon>

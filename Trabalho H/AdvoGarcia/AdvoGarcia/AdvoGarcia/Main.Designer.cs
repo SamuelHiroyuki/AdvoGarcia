@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(antigoMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlLateral = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnLogout = new Bunifu.Framework.UI.BunifuTileButton();
@@ -207,7 +205,6 @@
             this.tabConsulta = new System.Windows.Forms.TabPage();
             this.panel17 = new System.Windows.Forms.Panel();
             this.panel15 = new System.Windows.Forms.Panel();
-            this.bunifuCustomDataGrid1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.tabCaso = new System.Windows.Forms.TabPage();
             this.btnCasoClose = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnCasoSave = new Bunifu.Framework.UI.BunifuTileButton();
@@ -285,7 +282,6 @@
             this.tabCadCli.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCadCli)).BeginInit();
             this.tabConsulta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).BeginInit();
             this.tabCaso.SuspendLayout();
             this.tabCasosList.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -2696,7 +2692,6 @@
             this.tabConsulta.BackColor = System.Drawing.SystemColors.Control;
             this.tabConsulta.Controls.Add(this.panel17);
             this.tabConsulta.Controls.Add(this.panel15);
-            this.tabConsulta.Controls.Add(this.bunifuCustomDataGrid1);
             this.tabConsulta.Location = new System.Drawing.Point(4, 22);
             this.tabConsulta.Name = "tabConsulta";
             this.tabConsulta.Padding = new System.Windows.Forms.Padding(3);
@@ -2719,32 +2714,6 @@
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(46, 93);
             this.panel15.TabIndex = 33;
-            // 
-            // bunifuCustomDataGrid1
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.bunifuCustomDataGrid1.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCustomDataGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.bunifuCustomDataGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.bunifuCustomDataGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.bunifuCustomDataGrid1.DoubleBuffered = true;
-            this.bunifuCustomDataGrid1.EnableHeadersVisualStyles = false;
-            this.bunifuCustomDataGrid1.HeaderBgColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid1.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid1.Location = new System.Drawing.Point(32, 155);
-            this.bunifuCustomDataGrid1.Name = "bunifuCustomDataGrid1";
-            this.bunifuCustomDataGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.bunifuCustomDataGrid1.Size = new System.Drawing.Size(1005, 403);
-            this.bunifuCustomDataGrid1.TabIndex = 0;
             // 
             // tabCaso
             // 
@@ -3276,7 +3245,6 @@
             this.tabCadCli.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCadCli)).EndInit();
             this.tabConsulta.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuCustomDataGrid1)).EndInit();
             this.tabCaso.ResumeLayout(false);
             this.tabCasosList.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
@@ -3443,7 +3411,6 @@
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label lblNomeClitab;
         private System.Windows.Forms.Panel panel15;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel8;
