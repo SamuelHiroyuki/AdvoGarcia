@@ -33,35 +33,18 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.tabControl = new MetroFramework.Controls.MetroTabControl();
             this.tabPageHome = new MetroFramework.Controls.MetroTabPage();
+            this.ucChat1 = new AdvoGarcia.UC.ucChat();
+            this.ucMsg1 = new AdvoGarcia.UC.ucMsg();
             this.lblHome = new System.Windows.Forms.Label();
             this.lblLastLog = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnSaveAnot = new Bunifu.Framework.UI.BunifuImageButton();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtMsg = new System.Windows.Forms.RichTextBox();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.lblTempo = new System.Windows.Forms.Label();
-            this.metroTile4 = new MetroFramework.Controls.MetroTile();
-            this.metroTile6 = new MetroFramework.Controls.MetroTile();
+            this.btnCaso = new MetroFramework.Controls.MetroTile();
+            this.btnCli = new MetroFramework.Controls.MetroTile();
             this.picAdv = new System.Windows.Forms.PictureBox();
             this.tabPageCadAdv = new MetroFramework.Controls.MetroTabPage();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.lblIdCli = new System.Windows.Forms.Label();
-            this.lblTelCli = new System.Windows.Forms.Label();
-            this.lblNomeCli = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.label64 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.picCli = new System.Windows.Forms.PictureBox();
             this.btnVoltar = new MetroFramework.Controls.MetroTile();
             this.btnMin = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnClose = new Bunifu.Framework.UI.BunifuImageButton();
@@ -84,15 +67,9 @@
             this.tmrTempLog = new System.Windows.Forms.Timer(this.components);
             this.tabControl.SuspendLayout();
             this.tabPageHome.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnSaveAnot)).BeginInit();
-            this.panel2.SuspendLayout();
             this.panel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAdv)).BeginInit();
             this.tabPageCadAdv.SuspendLayout();
-            this.panel10.SuspendLayout();
-            this.panel9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picCli)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.pnlTopo.SuspendLayout();
@@ -122,12 +99,11 @@
             // 
             // tabPageHome
             // 
+            this.tabPageHome.Controls.Add(this.ucChat1);
+            this.tabPageHome.Controls.Add(this.ucMsg1);
             this.tabPageHome.Controls.Add(this.lblHome);
             this.tabPageHome.Controls.Add(this.lblLastLog);
             this.tabPageHome.Controls.Add(this.label2);
-            this.tabPageHome.Controls.Add(this.panel4);
-            this.tabPageHome.Controls.Add(this.panel6);
-            this.tabPageHome.Controls.Add(this.panel2);
             this.tabPageHome.Controls.Add(this.panel13);
             this.tabPageHome.HorizontalScrollbarBarColor = true;
             this.tabPageHome.HorizontalScrollbarHighlightOnWheel = false;
@@ -140,6 +116,22 @@
             this.tabPageHome.VerticalScrollbarBarColor = true;
             this.tabPageHome.VerticalScrollbarHighlightOnWheel = false;
             this.tabPageHome.VerticalScrollbarSize = 10;
+            // 
+            // ucChat1
+            // 
+            this.ucChat1.BackColor = System.Drawing.Color.White;
+            this.ucChat1.Location = new System.Drawing.Point(22, 86);
+            this.ucChat1.Name = "ucChat1";
+            this.ucChat1.Size = new System.Drawing.Size(600, 400);
+            this.ucChat1.TabIndex = 98;
+            // 
+            // ucMsg1
+            // 
+            this.ucMsg1.BackColor = System.Drawing.Color.White;
+            this.ucMsg1.Location = new System.Drawing.Point(22, 86);
+            this.ucMsg1.Name = "ucMsg1";
+            this.ucMsg1.Size = new System.Drawing.Size(600, 400);
+            this.ucMsg1.TabIndex = 97;
             // 
             // lblHome
             // 
@@ -176,95 +168,13 @@
             this.label2.TabIndex = 95;
             this.label2.Text = "Última vez logado :";
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel4.Controls.Add(this.btnSaveAnot);
-            this.panel4.Location = new System.Drawing.Point(447, 100);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(120, 70);
-            this.panel4.TabIndex = 90;
-            // 
-            // btnSaveAnot
-            // 
-            this.btnSaveAnot.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnSaveAnot.Image = ((System.Drawing.Image)(resources.GetObject("btnSaveAnot.Image")));
-            this.btnSaveAnot.ImageActive = null;
-            this.btnSaveAnot.Location = new System.Drawing.Point(25, 0);
-            this.btnSaveAnot.Name = "btnSaveAnot";
-            this.btnSaveAnot.Size = new System.Drawing.Size(71, 67);
-            this.btnSaveAnot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnSaveAnot.TabIndex = 76;
-            this.btnSaveAnot.TabStop = false;
-            this.btnSaveAnot.Zoom = 10;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel6.Location = new System.Drawing.Point(42, 473);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(564, 2);
-            this.panel6.TabIndex = 76;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.panel2.Controls.Add(this.metroComboBox1);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.txtMsg);
-            this.panel2.Controls.Add(this.panel8);
-            this.panel2.Location = new System.Drawing.Point(42, 117);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(564, 358);
-            this.panel2.TabIndex = 89;
-            // 
-            // metroComboBox1
-            // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Location = new System.Drawing.Point(245, 20);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(142, 29);
-            this.metroComboBox1.TabIndex = 91;
-            this.metroComboBox1.UseSelectable = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(33, 24);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(196, 21);
-            this.label4.TabIndex = 82;
-            this.label4.Text = "Enviar mensagem para:";
-            // 
-            // txtMsg
-            // 
-            this.txtMsg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMsg.Enabled = false;
-            this.txtMsg.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMsg.Location = new System.Drawing.Point(29, 65);
-            this.txtMsg.Name = "txtMsg";
-            this.txtMsg.Size = new System.Drawing.Size(497, 267);
-            this.txtMsg.TabIndex = 81;
-            this.txtMsg.Text = "";
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.SystemColors.Control;
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(2, 358);
-            this.panel8.TabIndex = 77;
-            // 
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(51)))), ((int)(((byte)(64)))));
             this.panel13.Controls.Add(this.label5);
             this.panel13.Controls.Add(this.lblTempo);
-            this.panel13.Controls.Add(this.metroTile4);
-            this.panel13.Controls.Add(this.metroTile6);
+            this.panel13.Controls.Add(this.btnCaso);
+            this.panel13.Controls.Add(this.btnCli);
             this.panel13.Controls.Add(this.picAdv);
             this.panel13.Location = new System.Drawing.Point(645, 0);
             this.panel13.Name = "panel13";
@@ -277,7 +187,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(46, 7);
+            this.label5.Location = new System.Drawing.Point(46, 11);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 13);
             this.label5.TabIndex = 1;
@@ -289,39 +199,40 @@
             this.lblTempo.BackColor = System.Drawing.Color.Transparent;
             this.lblTempo.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTempo.ForeColor = System.Drawing.Color.White;
-            this.lblTempo.Location = new System.Drawing.Point(43, 23);
+            this.lblTempo.Location = new System.Drawing.Point(43, 28);
             this.lblTempo.Name = "lblTempo";
             this.lblTempo.Size = new System.Drawing.Size(86, 32);
             this.lblTempo.TabIndex = 0;
             this.lblTempo.Text = "12 : 12";
             // 
-            // metroTile4
+            // btnCaso
             // 
-            this.metroTile4.ActiveControl = null;
-            this.metroTile4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(177)))), ((int)(((byte)(137)))));
-            this.metroTile4.Location = new System.Drawing.Point(0, 418);
-            this.metroTile4.Name = "metroTile4";
-            this.metroTile4.Size = new System.Drawing.Size(168, 68);
-            this.metroTile4.Style = MetroFramework.MetroColorStyle.Teal;
-            this.metroTile4.TabIndex = 3;
-            this.metroTile4.TabStop = false;
-            this.metroTile4.Text = "Casos";
-            this.metroTile4.UseCustomBackColor = true;
-            this.metroTile4.UseSelectable = true;
+            this.btnCaso.ActiveControl = null;
+            this.btnCaso.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(177)))), ((int)(((byte)(137)))));
+            this.btnCaso.Location = new System.Drawing.Point(0, 418);
+            this.btnCaso.Name = "btnCaso";
+            this.btnCaso.Size = new System.Drawing.Size(168, 68);
+            this.btnCaso.Style = MetroFramework.MetroColorStyle.Teal;
+            this.btnCaso.TabIndex = 3;
+            this.btnCaso.TabStop = false;
+            this.btnCaso.Text = "Casos";
+            this.btnCaso.UseCustomBackColor = true;
+            this.btnCaso.UseSelectable = true;
+            this.btnCaso.Click += new System.EventHandler(this.btnCaso_Click);
             // 
-            // metroTile6
+            // btnCli
             // 
-            this.metroTile6.ActiveControl = null;
-            this.metroTile6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(177)))), ((int)(((byte)(137)))));
-            this.metroTile6.Location = new System.Drawing.Point(0, 344);
-            this.metroTile6.Name = "metroTile6";
-            this.metroTile6.Size = new System.Drawing.Size(168, 68);
-            this.metroTile6.Style = MetroFramework.MetroColorStyle.Teal;
-            this.metroTile6.TabIndex = 1;
-            this.metroTile6.TabStop = false;
-            this.metroTile6.Text = "Clientes";
-            this.metroTile6.UseCustomBackColor = true;
-            this.metroTile6.UseSelectable = true;
+            this.btnCli.ActiveControl = null;
+            this.btnCli.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(177)))), ((int)(((byte)(137)))));
+            this.btnCli.Location = new System.Drawing.Point(0, 344);
+            this.btnCli.Name = "btnCli";
+            this.btnCli.Size = new System.Drawing.Size(168, 68);
+            this.btnCli.Style = MetroFramework.MetroColorStyle.Teal;
+            this.btnCli.TabIndex = 1;
+            this.btnCli.TabStop = false;
+            this.btnCli.Text = "Clientes";
+            this.btnCli.UseCustomBackColor = true;
+            this.btnCli.UseSelectable = true;
             // 
             // picAdv
             // 
@@ -330,15 +241,12 @@
             this.picAdv.Location = new System.Drawing.Point(0, 64);
             this.picAdv.Name = "picAdv";
             this.picAdv.Size = new System.Drawing.Size(168, 274);
+            this.picAdv.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picAdv.TabIndex = 88;
             this.picAdv.TabStop = false;
             // 
             // tabPageCadAdv
             // 
-            this.tabPageCadAdv.Controls.Add(this.panel15);
-            this.tabPageCadAdv.Controls.Add(this.panel10);
-            this.tabPageCadAdv.Controls.Add(this.panel9);
-            this.tabPageCadAdv.Controls.Add(this.picCli);
             this.tabPageCadAdv.Controls.Add(this.btnVoltar);
             this.tabPageCadAdv.HorizontalScrollbarBarColor = true;
             this.tabPageCadAdv.HorizontalScrollbarHighlightOnWheel = false;
@@ -351,128 +259,6 @@
             this.tabPageCadAdv.VerticalScrollbarBarColor = true;
             this.tabPageCadAdv.VerticalScrollbarHighlightOnWheel = false;
             this.tabPageCadAdv.VerticalScrollbarSize = 10;
-            // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel15.Location = new System.Drawing.Point(583, 3);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(2, 486);
-            this.panel15.TabIndex = 85;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel10.Controls.Add(this.label8);
-            this.panel10.Location = new System.Drawing.Point(584, 3);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(206, 27);
-            this.panel10.TabIndex = 84;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(3, 4);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(92, 20);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Cliente atual";
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.DarkCyan;
-            this.panel9.Controls.Add(this.lblIdCli);
-            this.panel9.Controls.Add(this.lblTelCli);
-            this.panel9.Controls.Add(this.lblNomeCli);
-            this.panel9.Controls.Add(this.label62);
-            this.panel9.Controls.Add(this.label64);
-            this.panel9.Controls.Add(this.label65);
-            this.panel9.Location = new System.Drawing.Point(584, 353);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(206, 136);
-            this.panel9.TabIndex = 83;
-            // 
-            // lblIdCli
-            // 
-            this.lblIdCli.AutoSize = true;
-            this.lblIdCli.BackColor = System.Drawing.Color.Transparent;
-            this.lblIdCli.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdCli.ForeColor = System.Drawing.Color.White;
-            this.lblIdCli.Location = new System.Drawing.Point(40, 13);
-            this.lblIdCli.Name = "lblIdCli";
-            this.lblIdCli.Size = new System.Drawing.Size(0, 21);
-            this.lblIdCli.TabIndex = 84;
-            // 
-            // lblTelCli
-            // 
-            this.lblTelCli.AutoSize = true;
-            this.lblTelCli.BackColor = System.Drawing.Color.Transparent;
-            this.lblTelCli.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelCli.ForeColor = System.Drawing.Color.White;
-            this.lblTelCli.Location = new System.Drawing.Point(83, 97);
-            this.lblTelCli.Name = "lblTelCli";
-            this.lblTelCli.Size = new System.Drawing.Size(0, 21);
-            this.lblTelCli.TabIndex = 82;
-            // 
-            // lblNomeCli
-            // 
-            this.lblNomeCli.AutoSize = true;
-            this.lblNomeCli.BackColor = System.Drawing.Color.Transparent;
-            this.lblNomeCli.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeCli.ForeColor = System.Drawing.Color.White;
-            this.lblNomeCli.Location = new System.Drawing.Point(67, 55);
-            this.lblNomeCli.Name = "lblNomeCli";
-            this.lblNomeCli.Size = new System.Drawing.Size(0, 21);
-            this.lblNomeCli.TabIndex = 81;
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.BackColor = System.Drawing.Color.Transparent;
-            this.label62.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label62.ForeColor = System.Drawing.Color.White;
-            this.label62.Location = new System.Drawing.Point(3, 97);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(84, 21);
-            this.label62.TabIndex = 80;
-            this.label62.Text = "Telefone :";
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.BackColor = System.Drawing.Color.Transparent;
-            this.label64.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.ForeColor = System.Drawing.Color.White;
-            this.label64.Location = new System.Drawing.Point(5, 13);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(35, 21);
-            this.label64.TabIndex = 77;
-            this.label64.Text = "ID :";
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.BackColor = System.Drawing.Color.Transparent;
-            this.label65.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label65.ForeColor = System.Drawing.Color.White;
-            this.label65.Location = new System.Drawing.Point(3, 55);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(65, 21);
-            this.label65.TabIndex = 78;
-            this.label65.Text = "Nome :";
-            // 
-            // picCli
-            // 
-            this.picCli.BackColor = System.Drawing.Color.White;
-            this.picCli.Location = new System.Drawing.Point(584, 30);
-            this.picCli.Name = "picCli";
-            this.picCli.Size = new System.Drawing.Size(206, 327);
-            this.picCli.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picCli.TabIndex = 82;
-            this.picCli.TabStop = false;
             // 
             // btnVoltar
             // 
@@ -588,7 +374,7 @@
             // elipseAnot
             // 
             this.elipseAnot.ElipseRadius = 6;
-            this.elipseAnot.TargetControl = this.panel4;
+            this.elipseAnot.TargetControl = this;
             // 
             // panel7
             // 
@@ -647,6 +433,7 @@
             this.btnCadCli.Text = "Cadastro Cliente";
             this.btnCadCli.UseCustomBackColor = true;
             this.btnCadCli.UseSelectable = true;
+            this.btnCadCli.Click += new System.EventHandler(this.btnCadCli_Click);
             // 
             // btnQuery
             // 
@@ -661,6 +448,7 @@
             this.btnQuery.Text = "Consulta";
             this.btnQuery.UseCustomBackColor = true;
             this.btnQuery.UseSelectable = true;
+            this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
             // 
             // btnHome
             // 
@@ -714,19 +502,10 @@
             this.tabControl.ResumeLayout(false);
             this.tabPageHome.ResumeLayout(false);
             this.tabPageHome.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnSaveAnot)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAdv)).EndInit();
             this.tabPageCadAdv.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picCli)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.pnlTopo.ResumeLayout(false);
@@ -764,32 +543,15 @@
         private System.Windows.Forms.Timer tmrTempLog;
         private MetroFramework.Controls.MetroTabPage tabPageHome;
         private System.Windows.Forms.Panel panel13;
-        private MetroFramework.Controls.MetroTile metroTile4;
-        private MetroFramework.Controls.MetroTile metroTile6;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label lblIdCli;
-        private System.Windows.Forms.Label lblTelCli;
-        private System.Windows.Forms.Label lblNomeCli;
-        private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.PictureBox picCli;
-        private System.Windows.Forms.Panel panel4;
-        private Bunifu.Framework.UI.BunifuImageButton btnSaveAnot;
-        private System.Windows.Forms.Panel panel2;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.RichTextBox txtMsg;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel8;
+        private MetroFramework.Controls.MetroTile btnCaso;
+        private MetroFramework.Controls.MetroTile btnCli;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox picAdv;
         private System.Windows.Forms.Label lblTempo;
         private System.Windows.Forms.Label lblHome;
         private System.Windows.Forms.Label lblLastLog;
         private System.Windows.Forms.Label label2;
+        private UC.ucMsg ucMsg1;
+        private UC.ucChat ucChat1;
     }
 }

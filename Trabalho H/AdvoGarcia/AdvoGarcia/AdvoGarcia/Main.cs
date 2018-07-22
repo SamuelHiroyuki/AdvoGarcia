@@ -334,8 +334,6 @@ namespace AdvoGarcia.Telas
                 c.User = txtCUserC.Text;
                 c.Pass = txtCPassC.Text;
                 c.FormaPaga = cboFormP.Text;
-                c.Foto = copyImgToFolder();
-                c.Caso = caso.PegaID(txtDescCaso.Text);
                 c.Cadastrar();
                 MessageBox.Show("Cliente cadastrado", "Sucesso");
                 limpar();
@@ -610,8 +608,8 @@ namespace AdvoGarcia.Telas
             lblIDAdv.Text = atuala.Id.ToString();
             lblCasoResol.Text = atuala.QtdCasos.ToString();
 
-            if (atuala.Id_Caso != 0) { btnCasoAdv.Text = "Encerrar Caso"; }
-            else { btnCasoAdv.Text = "Selecionar Caso"; }
+            //if (atuala.Id_Caso != 0) { btnCasoAdv.Text = "Encerrar Caso"; }
+            //else { btnCasoAdv.Text = "Selecionar Caso"; }
 
             //try
             //{
@@ -636,14 +634,14 @@ namespace AdvoGarcia.Telas
 
         private void btnCasoAdv_Click(object sender, EventArgs e)
         {
-            if (atuala.Id_Caso != 0)
-            {
-                EncerrarCaso();
-            }
-            else
-            {
-                SelecionarCaso();
-            }
+            //if (atuala.Id_Caso != 0)
+            //{
+            //    EncerrarCaso();
+            //}
+            //else
+            //{
+            //    SelecionarCaso();
+            //}
         }
 
         //

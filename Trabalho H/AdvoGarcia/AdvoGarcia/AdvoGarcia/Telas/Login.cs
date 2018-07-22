@@ -63,7 +63,7 @@ namespace AdvoGarcia.Telas
                 {
                     if (c.Verificar())
                     {
-                        MessageBox.Show(c.Nome + c.Caso.Id.ToString(), "Cli");
+                        MessageBox.Show(c.Nome, "Cli");
                         this.Hide();
                         frmMain main = new frmMain(c);
                         main.ShowDialog();

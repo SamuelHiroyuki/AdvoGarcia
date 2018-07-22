@@ -24,7 +24,6 @@ namespace AdvoGarcia.Classes
         public string Area { get; set; }
         public string Ani { get; set; }
         public string LastLog { get; set; }
-        public int Id_Caso { get; set; }
 
         public void Cadastrar() {
             SqlConnection cn = Conexao.conectar();
@@ -75,8 +74,7 @@ namespace AdvoGarcia.Classes
                 this.Ani = dr[11].ToString();
                 this.Area = dr[12].ToString();
                 this.LastLog = dr[13].ToString();
-                try { this.Id_Caso = (int)dr["Id_Caso"]; }
-                catch (Exception){}
+                cn.Close();
                 return true;
             }
             cn.Close();
@@ -88,14 +86,14 @@ namespace AdvoGarcia.Classes
             SqlConnection cn = Conexao.conectar();
             SqlCommand cmd = cn.CreateCommand();
 
-            cmd.CommandText = "select ID_Advogado from tbAdvogado where User_Adv = @user COLLATE SQL_Latin1_General_CP1_CS_AS or CPF_Adv = @cpf";
+            cmd.CommandText = "select ID_Advogado from tbAdvogado where User_Adv = @user COLLATE SQL_Latin1_General_CP1_CS_AS";
 
             cmd.Parameters.Add("@user", SqlDbType.VarChar, 50).Value = this.User;
-            cmd.Parameters.Add("@cpf", SqlDbType.VarChar, 50).Value = this.CPF;
 
             SqlDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
+                cn.Close();
                 return true;
             }
             cn.Close();
@@ -126,6 +124,39 @@ namespace AdvoGarcia.Classes
 
             cmd.ExecuteNonQuery();
             cn.Close();
+        }
+
+        public Advogado PegaPorID(int s)
+        {
+            Advogado adv = new Advogado();
+            SqlConnection cn = Conexao.conectar();
+            SqlCommand cmd = cn.CreateCommand();
+
+            cmd.CommandText = "select * from tbCaso";
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                if (Convert.ToInt32(dr["ID_Advogado"]) == s)
+                {
+                    adv.Id = (int)dr[0];
+                    adv.Nome = dr[1].ToString();
+                    adv.Endereco = dr[2].ToString();
+                    adv.Email = dr[3].ToString();
+                    adv.Telefone = dr[8].ToString();
+                    adv.CPF = dr[7].ToString();
+                    adv.Foto = dr[4].ToString();
+                    adv.QtdCasos = (int)dr[9];
+                    adv.PrecoHR = (int)dr[10];
+                    adv.Ani = dr[11].ToString();
+                    adv.Area = dr[12].ToString();
+                    adv.LastLog = dr[13].ToString();
+                    cn.Close();
+                    return adv;
+                }
+            }
+            cn.Close();
+            return null;
         }
     }
 }

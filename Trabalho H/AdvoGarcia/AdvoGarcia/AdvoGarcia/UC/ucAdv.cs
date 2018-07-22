@@ -42,7 +42,6 @@ namespace AdvoGarcia.UC
                 picAdv.Image = Image.FromFile(a.Foto);
             }
             catch (Exception){}
-            cboArea.SelectedIndex = cboArea.FindStringExact(a.Area.ToString());
             lblImgPath.Text = a.Foto.ToString();
             cboArea.SelectedIndex = cboArea.Items.IndexOf(a.Area);
         }
@@ -63,38 +62,7 @@ namespace AdvoGarcia.UC
             picAdv.Image = null;
             lblImgPath.Text = string.Empty;
         }
-
-        private string copyImgToFolder()
-        {
-            string nomev = string.Empty;
-            int j = 0;
-
-            string targetPath = @"C:\Users\samhi\Desktop\Trabalho H\AdvoGarcia\Fotos";
-
-            string sourceFile = System.IO.Path.Combine(fileName);
-            string nom = (j).ToString() + ".jpg";
-            string destFile = System.IO.Path.Combine(targetPath, nom);
-
-            do
-            {
-                if (System.IO.File.Exists(@"C:\Users\samhi\Desktop\Trabalho H\AdvoGarcia\Fotos\" + nom))
-                {
-                    nomev = (j++).ToString() + ".jpg";
-                    destFile = System.IO.Path.Combine(targetPath, nomev);
-                }
-            } while (System.IO.File.Exists(@"C:\Users\samhi\Desktop\Trabalho H\AdvoGarcia\Fotos\" + nomev));
-
-            System.IO.File.Copy(sourceFile, destFile, true);
-            if (nomev.Equals(string.Empty))
-            {
-                return (@"C: \Users\samhi\Desktop\Trabalho H\AdvoGarcia\Fotos\" + nom);
-            }
-            else
-            {
-                return (@"C: \Users\samhi\Desktop\Trabalho H\AdvoGarcia\Fotos\" + nomev);
-            }
-        }
-
+        
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (a == null)
@@ -110,14 +78,14 @@ namespace AdvoGarcia.UC
                     na.User = txtUser.Text;
                     na.Pass = txtPass.Text;
                     na.Ani = dateNasci.Text;
-                    na.Area = cboArea.SelectedText;
+                    na.Area = cboArea.Text;
                     na.Foto = copyImgToFolder();
                     na.PrecoHR = Convert.ToInt32(nudPrec.Value);
                     na.QtdCasos = Convert.ToInt32(nudQtdC.Value);
 
                     if (na.Confirmar())
                     {
-                        MessageBox.Show("Já existe advogado com esse CPF.", "Atenção");
+                        MessageBox.Show("Já existe advogado com esse nome de usuario.", "Atenção");
                     }
                     else
                     {
@@ -134,7 +102,41 @@ namespace AdvoGarcia.UC
             }
             else
             {
-
+                if (!(txtNome.Text.Equals(string.Empty) || txtEnd.Text.Equals(string.Empty) || txtCPF.Text.Length != 14 || txtTel.Text.Length != 15 || txtEmail.Text.Equals(string.Empty) || !txtEmail.Text.Contains("@") || cboArea.SelectedIndex == -1 || txtUser.Text.Equals(string.Empty) || txtPass.Text.Equals(string.Empty) || nudPrec.Value == 0))
+                {
+                    a.Nome = txtNome.Text;
+                    a.Endereco = txtEnd.Text;
+                    a.CPF = txtCPF.Text;
+                    a.Telefone = txtTel.Text;
+                    a.Email = txtEmail.Text;
+                    a.Pass = txtPass.Text;
+                    a.Ani = dateNasci.Text;
+                    a.Area = cboArea.Text;
+                    if (!a.Foto.Equals(lblImgPath.Text))
+                    {
+                        a.Foto = copyImgToFolder();
+                    }
+                    a.PrecoHR = Convert.ToInt32(nudPrec.Value);
+                    a.QtdCasos = Convert.ToInt32(nudQtdC.Value);
+                    
+                    if (a.User.Equals(txtUser))
+                    {
+                        a.User = txtUser.Text;
+                        if (a.Confirmar())
+                        {
+                            MessageBox.Show("Já existe advogado com esse nome de usuario.", "Atenção");
+                        }
+                        else
+                        {
+                            a.Atualizar();
+                            MessageBox.Show("Advogado atualizado", "Sucesso");
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Preencha todos os campos!", "Atenção");
+                }
             }
         }
 
@@ -174,9 +176,39 @@ namespace AdvoGarcia.UC
                     picAdv.Image = Image.FromFile(a.Foto);
                 }
                 catch (Exception) { }
-                cboArea.SelectedIndex = cboArea.FindStringExact(a.Area.ToString());
                 lblImgPath.Text = a.Foto.ToString();
                 cboArea.SelectedIndex = cboArea.Items.IndexOf(a.Area);
+            }
+        }
+
+        private string copyImgToFolder()
+        {
+            string nomev = string.Empty;
+            int j = 0;
+
+            string targetPath = @"C:\Users\samhi\Documents\GitHub\PTCC\Trabalho H\AdvoGarcia\Fotos";
+
+            string sourceFile = System.IO.Path.Combine(fileName);
+            string nom = (j).ToString() + ".jpg";
+            string destFile = System.IO.Path.Combine(targetPath, nom);
+
+            do
+            {
+                if (System.IO.File.Exists(@"C:\Users\samhi\Documents\GitHub\PTCC\Trabalho H\AdvoGarcia\Fotos\" + nom))
+                {
+                    nomev = (j++).ToString() + ".jpg";
+                    destFile = System.IO.Path.Combine(targetPath, nomev);
+                }
+            } while (System.IO.File.Exists(@"C:\Users\samhi\Documents\GitHub\PTCC\Trabalho H\AdvoGarcia\Fotos\" + nomev));
+
+            System.IO.File.Copy(sourceFile, destFile, true);
+            if (nomev.Equals(string.Empty))
+            {
+                return (@"C:\Users\samhi\Documents\GitHub\PTCC\Trabalho H\AdvoGarcia\Fotos\" + nom);
+            }
+            else
+            {
+                return (@"C:\Users\samhi\Documents\GitHub\PTCC\Trabalho H\AdvoGarcia\Fotos\" + nomev);
             }
         }
     }

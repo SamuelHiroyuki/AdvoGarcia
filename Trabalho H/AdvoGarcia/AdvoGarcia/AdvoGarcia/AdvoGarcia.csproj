@@ -65,6 +65,7 @@
     <Compile Include="Classes\Advogado.cs" />
     <Compile Include="Classes\Caso.cs" />
     <Compile Include="Classes\Cliente.cs" />
+    <Compile Include="Classes\Mensagem.cs" />
     <Compile Include="Conexao.cs" />
     <Compile Include="dbAdvoGarciaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -103,17 +104,35 @@
     <Compile Include="UC\ucAdv.Designer.cs">
       <DependentUpon>ucAdv.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\ucChat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucChat.Designer.cs">
+      <DependentUpon>ucChat.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\ucCli.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC\ucCli.Designer.cs">
       <DependentUpon>ucCli.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\ucConsulta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucConsulta.Designer.cs">
+      <DependentUpon>ucConsulta.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\ucCustomSaveBtn.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC\ucCustomSaveBtn.Designer.cs">
       <DependentUpon>ucCustomSaveBtn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ucMsg.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucMsg.Designer.cs">
+      <DependentUpon>ucMsg.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -139,11 +158,20 @@
     <EmbeddedResource Include="UC\ucAdv.resx">
       <DependentUpon>ucAdv.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucChat.resx">
+      <DependentUpon>ucChat.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\ucCli.resx">
       <DependentUpon>ucCli.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucConsulta.resx">
+      <DependentUpon>ucConsulta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC\ucCustomSaveBtn.resx">
       <DependentUpon>ucCustomSaveBtn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucMsg.resx">
+      <DependentUpon>ucMsg.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="dbAdvoGarciaDataSet.xsc">
       <DependentUpon>dbAdvoGarciaDataSet.xsd</DependentUpon>
