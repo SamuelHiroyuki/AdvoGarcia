@@ -103,7 +103,7 @@ namespace AdvoGarcia.Telas
                 lineShape1.SelectionColor = Color.FromArgb(217, 19, 39);
                 lineShape2.BorderColor = Color.FromArgb(217, 19, 39);
                 lineShape2.SelectionColor = Color.FromArgb(217, 19, 39);
-                MessageBox.Show("Preencha todos os campos!", "Atenção");
+                CustomMB.Show("Preencha todos os campos!", CustomMB.CorFundo.Amarelo);
             }
             else
             {
@@ -128,7 +128,7 @@ namespace AdvoGarcia.Telas
                         lineShape1.SelectionColor = Color.FromArgb(217, 19, 39);
                         lineShape2.BorderColor = Color.FromArgb(217, 19, 39);
                         lineShape2.SelectionColor = Color.FromArgb(217, 19, 39);
-                        MessageBox.Show("Dados incorretos!", "Atenção");
+                        CustomMB.Show("Os dados estão incorretos!", CustomMB.CorFundo.Vermelho);
                     }
                 }
             }

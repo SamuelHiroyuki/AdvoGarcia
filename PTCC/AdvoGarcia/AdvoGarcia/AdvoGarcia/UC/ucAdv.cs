@@ -63,19 +63,19 @@ namespace AdvoGarcia.UC
 
                 if (adao.Confirmar(na.User))
                 {
-                    MessageBox.Show("Já existe advogado com esse nome de usuario.", "Atenção");
+                    CustomMB.Show("Já existe um advogado com esse nome de usuario cadastrado!", CustomMB.CorFundo.Vermelho);
                 }
                 else
                 {
                     adao.Salvar(na);
-                    MessageBox.Show("Advogado cadastrado", "Sucesso");
+                    CustomMB.Show("Advogado cadastrado com sucesso!", CustomMB.CorFundo.Verde);
                     btnClear_Click(sender, e);
                     na = null;
                 }
             }
             else
             {
-                MessageBox.Show("Campos vazios!", "Atenção");
+                CustomMB.Show("Alguns campos estão vazios!", CustomMB.CorFundo.Amarelo);
             }
         }
 

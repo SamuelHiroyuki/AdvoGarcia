@@ -30,6 +30,7 @@ namespace AdvoGarcia.UC
             dataGridView1.ReadOnly = true;
             var buscaA = from cli in contexto.Clientes join c in contexto.Casos on cli.ID equals c.ClienteID where c.AdvogadoID == aaa.ID && c.Status == "Andamento" select cli;
             dataGridView1.DataSource = buscaA.ToList();
+            dataGridView1.ClearSelection();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -38,11 +39,13 @@ namespace AdvoGarcia.UC
             {
                 var buscaA = from cli in contexto.Clientes join c in contexto.Casos on cli.ID equals c.ClienteID where c.AdvogadoID == aaa.ID && c.Status == "Andamento" select cli;
                 dataGridView1.DataSource = buscaA.ToList();
+                dataGridView1.ClearSelection();
             }
             else
             {
                 var buscaA = from cli in contexto.Clientes join c in contexto.Casos on cli.ID equals c.ClienteID where c.AdvogadoID == aaa.ID && c.Status == "Andamento" && cli.Nome.Contains(txtNome.Text) select cli;
                 dataGridView1.DataSource = buscaA.ToList();
+                dataGridView1.ClearSelection();
             }
         }
     }

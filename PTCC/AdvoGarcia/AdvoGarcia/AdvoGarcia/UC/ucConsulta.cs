@@ -40,7 +40,7 @@ namespace AdvoGarcia.UC
         {
             if (cboTipoCon.SelectedIndex == -1)
             {
-                MessageBox.Show("Selecione o tipo de consulta","Atenção");
+                CustomMB.Show("Selecione o tipo de consulta!", CustomMB.CorFundo.Amarelo);
             }
             else
             {
@@ -52,16 +52,19 @@ namespace AdvoGarcia.UC
                             Visivel();
                             var buscaA = from a in contexto.Advogados select a;
                             dataGridView1.DataSource = buscaA.ToList();
+                            dataGridView1.ClearSelection();
                             break;
                         case TipoCon.Caso:
                             Oculto();
                             var buscaC = from c in contexto.Casos select c;
                             dataGridView1.DataSource = buscaC.ToList();
+                            dataGridView1.ClearSelection();
                             break;
                         case TipoCon.Cliente:
                             Visivel();
                             var buscaCl = from c in contexto.Clientes select c;
                             dataGridView1.DataSource = buscaCl.ToList();
+                            dataGridView1.ClearSelection();
                             break;
                     }
                 }
@@ -73,16 +76,19 @@ namespace AdvoGarcia.UC
                             Visivel();
                             var buscaA = from a in contexto.Advogados where a.Nome.Equals(txtNome.Text) select a;
                             dataGridView1.DataSource = buscaA.ToList();
+                            dataGridView1.ClearSelection();
                             break;
                         case TipoCon.Caso:
                             Oculto();
                             var buscaC = from c in contexto.Casos select c;
                             dataGridView1.DataSource = buscaC.ToList();
+                            dataGridView1.ClearSelection();
                             break;
                         case TipoCon.Cliente:
                             Visivel();
                             var buscaCl = from c in contexto.Clientes where c.Nome.Equals(txtNome.Text) select c;
                             dataGridView1.DataSource = buscaCl.ToList();
+                            dataGridView1.ClearSelection();
                             break;
                     }
                 }
@@ -102,14 +108,16 @@ namespace AdvoGarcia.UC
                         AdvogadoDAO adao = new AdvogadoDAO();
                         Advogado aa = adao.BuscaPorID(Convert.ToInt32(dataGridView1.Rows[indice].Cells["ID"].Value));
                         adao.Remover(aa);
-                        MessageBox.Show("Removido", "Atenção");
+                        CustomMB.Show("Advogado removido com sucesso!", CustomMB.CorFundo.Verde);
                         var buscaA = from a in contexto.Advogados select a;
                         dataGridView1.DataSource = buscaA.ToList();
+                        dataGridView1.ClearSelection();
                         break;
                     case TipoCon.Caso:
                         Oculto();
                         var buscaC = from c in contexto.Casos select c;
                         dataGridView1.DataSource = buscaC.ToList();
+                        dataGridView1.ClearSelection();
                         break;
                     case TipoCon.Cliente:
                         Visivel();
@@ -118,9 +126,10 @@ namespace AdvoGarcia.UC
                         ClienteDAO cdao = new ClienteDAO();
                         Cliente cc = cdao.BuscaPorID(Convert.ToInt32(dataGridView1.Rows[indiceC].Cells["ID"].Value));
                         cdao.Remover(cc);
-                        MessageBox.Show("Removido", "Atenção");
+                        CustomMB.Show("Cliente removido com sucesso!", CustomMB.CorFundo.Verde);
                         var buscaCl = from c in contexto.Clientes select c;
                         dataGridView1.DataSource = buscaCl.ToList();
+                        dataGridView1.ClearSelection();
                         break;
                 }
             }
@@ -135,14 +144,16 @@ namespace AdvoGarcia.UC
                         AdvogadoDAO adao = new AdvogadoDAO();
                         Advogado aa = adao.BuscaPorID(Convert.ToInt32(dataGridView1.Rows[indice].Cells["ID"].Value));
                         adao.Remover(aa);
-                        MessageBox.Show("Removido", "Atenção");
+                        CustomMB.Show("Advogado removido com sucesso!", CustomMB.CorFundo.Verde);
                         var buscaA = from a in contexto.Advogados where a.Nome.Equals(txtNome.Text) select a;
                         dataGridView1.DataSource = buscaA.ToList();
+                        dataGridView1.ClearSelection();
                         break;
                     case TipoCon.Caso:
                         Oculto();
                         var buscaC = from c in contexto.Casos select c;
                         dataGridView1.DataSource = buscaC.ToList();
+                        dataGridView1.ClearSelection();
                         break;
                     case TipoCon.Cliente:
                         Visivel();
@@ -151,9 +162,10 @@ namespace AdvoGarcia.UC
                         ClienteDAO cdao = new ClienteDAO();
                         Cliente cc = cdao.BuscaPorID(Convert.ToInt32(dataGridView1.Rows[indiceC].Cells["ID"].Value));
                         cdao.Remover(cc);
-                        MessageBox.Show("Removido", "Atenção");
+                        CustomMB.Show("Cliente removido com sucesso", CustomMB.CorFundo.Verde);
                         var buscaCl = from c in contexto.Clientes where c.Nome.Equals(txtNome.Text) select c;
                         dataGridView1.DataSource = buscaCl.ToList();
+                        dataGridView1.ClearSelection();
                         break;
                 }
             }
@@ -190,6 +202,21 @@ namespace AdvoGarcia.UC
                     frmAlt altC = new frmAlt(false, Convert.ToInt32(dataGridView1.Rows[indiceC].Cells["ID"].Value));
                     altC.ShowDialog();
                     break;
+            }
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dataGridView1.Columns[e.ColumnIndex].Name == "Status")
+            {
+                if (e.Value.Equals("Andamento"))
+                {
+                    e.CellStyle.BackColor = Color.Green;
+                }
+                else
+                {
+                    e.CellStyle.BackColor = Color.Crimson;
+                }
             }
         }
     }

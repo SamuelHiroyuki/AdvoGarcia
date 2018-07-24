@@ -53,24 +53,24 @@ namespace AdvoGarcia.UC
                     a.User = txtUser.Text;
                     if (adao.Confirmar(a.User))
                     {
-                        MessageBox.Show("Já existe advogado com esse nome de usuario.", "Atenção");
+                        CustomMB.Show("Já existe um advogado com esse nome de usuario cadastrado!", CustomMB.CorFundo.Vermelho);
                     }
                     else
                     {
                         adao.Atualizar();
-                        MessageBox.Show("Advogado atualizado", "Sucesso");
+                        CustomMB.Show("Advogado atualizado com sucesso!", CustomMB.CorFundo.Verde);
                         this.Dispose();
                     }
                 }
                 else
                 {
                     adao.Atualizar();
-                    MessageBox.Show("Advogado atualizado", "Sucesso");
+                    CustomMB.Show("Advogado atualizado com sucesso!", CustomMB.CorFundo.Verde);
                 }
             }
             else
             {
-                MessageBox.Show("Campos vazios!", "Atenção");
+                CustomMB.Show("Alguns campos estão vazios!", CustomMB.CorFundo.Amarelo);
             }
         }
 

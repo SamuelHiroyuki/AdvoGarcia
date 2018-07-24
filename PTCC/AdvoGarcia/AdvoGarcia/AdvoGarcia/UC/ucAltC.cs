@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdvoGarcia.Entidades;
 using AdvoGarcia.DAO;
+using AdvoGarcia.Telas;
 
 namespace AdvoGarcia.UC
 {
@@ -49,23 +50,23 @@ namespace AdvoGarcia.UC
                     c.User = txtUser.Text;
                     if (cdao.Confirmar(c.User))
                     {
-                        MessageBox.Show("Já existe advogado com esse nome de usuario.", "Atenção");
+                        CustomMB.Show("Já existe um cliente com esse nome de usuario cadastrado!", CustomMB.CorFundo.Vermelho);
                     }
                     else
                     {
                         cdao.Atualizar();
-                        MessageBox.Show("Advogado atualizado", "Sucesso");
+                        CustomMB.Show("Cliente atualizado com sucesso!", CustomMB.CorFundo.Verde);
                     }
                 }
                 else
                 {
                     cdao.Atualizar();
-                    MessageBox.Show("Advogado atualizado", "Sucesso");
+                    CustomMB.Show("Cliente atualizado com sucesso!", CustomMB.CorFundo.Verde);
                 }
             }
             else
             {
-                MessageBox.Show("Campos vazios!", "Atenção");
+                CustomMB.Show("Alguns campos estão vazios!", CustomMB.CorFundo.Amarelo);
             }
         }
 

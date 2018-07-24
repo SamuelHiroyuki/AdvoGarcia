@@ -18,7 +18,7 @@ namespace AdvoGarcia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CustomMB(CorFundo.Verde));
+            Application.Run(new frmSplash());
         }
     }
 }

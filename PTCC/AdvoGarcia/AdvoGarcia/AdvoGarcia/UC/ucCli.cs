@@ -45,12 +45,12 @@ namespace AdvoGarcia.UC
 
                 if (cdao.Confirmar(nc.User))
                 {
-                    MessageBox.Show("Já existe advogado com esse nome de usuario.", "Atenção");
+                    CustomMB.Show("Já existe um cliente com esse nome de usuario cadastrado!", CustomMB.CorFundo.Vermelho);
                 }
                 else
                 {
                     cdao.Salvar(nc);
-                    MessageBox.Show("Cliente cadastrado", "Sucesso");
+                    CustomMB.Show("Cliente cadastrado com sucesso!", CustomMB.CorFundo.Verde);
                     frmPedirCaso pc = new frmPedirCaso();
                     pc.ShowDialog();
                     CasoDAO casodao = new CasoDAO();
@@ -66,7 +66,7 @@ namespace AdvoGarcia.UC
             }
             else
             {
-                MessageBox.Show("Campos vazios!", "Atenção");
+                CustomMB.Show("Alguns campos estão vazios!", CustomMB.CorFundo.Amarelo);
             }
         }
 

@@ -35,6 +35,7 @@ namespace AdvoGarcia.UC
             cboAdv.Visible = false;
             var busca = from cli in contexto.Clientes join c in contexto.Casos on cli.ID equals c.ClienteID where c.AdvogadoID == aaa.ID && c.Status == "Andamento" select new { c.ID, c.Status, cli.Nome };
             dataGridView1.DataSource = busca.ToList();
+            dataGridView1.ClearSelection();
         }
 
         public ucConCaso(Cliente cc)
@@ -57,6 +58,7 @@ namespace AdvoGarcia.UC
             cboAdv.SelectedIndex = cboAdv.Items.IndexOf("Possui advogado");
             var busca = from c in contexto.Casos join cli in contexto.Clientes on c.ClienteID equals cli.ID join a in contexto.Advogados on c.AdvogadoID equals a.ID where c.ClienteID == ccc.ID && c.Status == "Andamento" select new { c.ID, c.Status, a.Nome};
             dataGridView1.DataSource = busca.ToList();
+            dataGridView1.ClearSelection();
         }   
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -68,7 +70,7 @@ namespace AdvoGarcia.UC
                     btnPegar.Visible = false;
                     if (chbAnd.Checked == false && chbEnc.Checked == false)
                     {
-                        MessageBox.Show("Marque uma opção!", "Atenção");
+                        CustomMB.Show("Marque uma opção!", CustomMB.CorFundo.Amarelo);
                     }
                     else
                     {
@@ -78,11 +80,13 @@ namespace AdvoGarcia.UC
                             {
                                 var buscaA = from cli in contexto.Clientes join c in contexto.Casos on cli.ID equals c.ClienteID where c.AdvogadoID == aaa.ID select new { c.ID, c.Status, cli.Nome };
                                 dataGridView1.DataSource = buscaA.ToList();
+                                dataGridView1.ClearSelection();
                             }
                             else
                             {
                                 var buscaA = from cli in contexto.Clientes join c in contexto.Casos on cli.ID equals c.ClienteID where c.AdvogadoID == aaa.ID && cli.Nome.Contains(txtNome.Text) select new { c.ID, c.Status, cli.Nome };
                                 dataGridView1.DataSource = buscaA.ToList();
+                                dataGridView1.ClearSelection();
                             }
                         }
                         else
@@ -93,11 +97,13 @@ namespace AdvoGarcia.UC
                                 {
                                     var buscaA = from cli in contexto.Clientes join c in contexto.Casos on cli.ID equals c.ClienteID where c.AdvogadoID == aaa.ID && c.Status == "Andamento" select new { c.ID, c.Status, cli.Nome };
                                     dataGridView1.DataSource = buscaA.ToList();
+                                    dataGridView1.ClearSelection();
                                 }
                                 else
                                 {
                                     var buscaA = from cli in contexto.Clientes join c in contexto.Casos on cli.ID equals c.ClienteID where c.AdvogadoID == aaa.ID && c.Status == "Andamento" && cli.Nome.Contains(txtNome.Text) select new { c.ID, c.Status, cli.Nome };
                                     dataGridView1.DataSource = buscaA.ToList();
+                                    dataGridView1.ClearSelection();
                                 }
                             }
                             if (chbEnc.Checked)
@@ -106,11 +112,13 @@ namespace AdvoGarcia.UC
                                 {
                                     var buscaA = from cli in contexto.Clientes join c in contexto.Casos on cli.ID equals c.ClienteID where c.AdvogadoID == aaa.ID && c.Status != "Andamento" select new { c.ID, c.Status, cli.Nome };
                                     dataGridView1.DataSource = buscaA.ToList();
+                                    dataGridView1.ClearSelection();
                                 }
                                 else
                                 {
                                     var buscaA = from cli in contexto.Clientes join c in contexto.Casos on cli.ID equals c.ClienteID where c.AdvogadoID == aaa.ID && c.Status != "Andamento" && cli.Nome.Contains(txtNome.Text) select new { c.ID, c.Status, cli.Nome };
                                     dataGridView1.DataSource = buscaA.ToList();
+                                    dataGridView1.ClearSelection();
                                 }
                             }
                         }
@@ -125,11 +133,13 @@ namespace AdvoGarcia.UC
                     {
                         var buscaA = from cli in contexto.Clientes join c in contexto.Casos on cli.ID equals c.ClienteID where c.AdvogadoID == null && c.Status == "Andamento" select new { c.ID, c.Status, cli.Nome };
                         dataGridView1.DataSource = buscaA.ToList();
+                        dataGridView1.ClearSelection();
                     }
                     else
                     {
                         var buscaA = from cli in contexto.Clientes join c in contexto.Casos on cli.ID equals c.ClienteID where c.AdvogadoID == null && c.Status == "Andamento" && cli.Nome.Contains(txtNome.Text) select new { c.ID, c.Status, cli.Nome };
                         dataGridView1.DataSource = buscaA.ToList();
+                        dataGridView1.ClearSelection();
                     }
                 }
             }
@@ -141,6 +151,7 @@ namespace AdvoGarcia.UC
                     {
                         var busca = from c in contexto.Casos join cli in contexto.Clientes on c.ClienteID equals cli.ID join a in contexto.Advogados on c.AdvogadoID equals a.ID where c.ClienteID == ccc.ID select new { c.ID, c.Status, a.Nome };
                         dataGridView1.DataSource = busca.ToList();
+                        dataGridView1.ClearSelection();
                     }
                     else
                     {
@@ -148,11 +159,13 @@ namespace AdvoGarcia.UC
                         {
                             var busca = from c in contexto.Casos join cli in contexto.Clientes on c.ClienteID equals cli.ID join a in contexto.Advogados on c.AdvogadoID equals a.ID where c.ClienteID == ccc.ID && c.Status == "Andamento" select new { c.ID, c.Status, a.Nome };
                             dataGridView1.DataSource = busca.ToList();
+                            dataGridView1.ClearSelection();
                         }
                         if (chbEnc.Checked)
                         {
                             var busca = from c in contexto.Casos join cli in contexto.Clientes on c.ClienteID equals cli.ID join a in contexto.Advogados on c.AdvogadoID equals a.ID where c.ClienteID == ccc.ID && c.Status != "Andamento" select new { c.ID, c.Status, a.Nome };
                             dataGridView1.DataSource = busca.ToList();
+                            dataGridView1.ClearSelection();
                         }
                     }
                 }
@@ -162,6 +175,7 @@ namespace AdvoGarcia.UC
                     {
                         var busca = from c in contexto.Casos join cli in contexto.Clientes on c.ClienteID equals cli.ID where c.ClienteID == ccc.ID && c.AdvogadoID == null select new { c.ID, c.Status };
                         dataGridView1.DataSource = busca.ToList();
+                        dataGridView1.ClearSelection();
                     }
                     else
                     {
@@ -169,10 +183,13 @@ namespace AdvoGarcia.UC
                         {
                             var busca = from c in contexto.Casos join cli in contexto.Clientes on c.ClienteID equals cli.ID where c.ClienteID == ccc.ID && c.AdvogadoID == null && c.Status == "Andamento" select new { c.ID, c.Status };
                             dataGridView1.DataSource = busca.ToList();
+                            dataGridView1.ClearSelection();
                         }
                         if (chbEnc.Checked)
                         {
                             var busca = from c in contexto.Casos join cli in contexto.Clientes on c.ClienteID equals cli.ID where c.ClienteID == ccc.ID && c.AdvogadoID == null && c.Status != "Andamento" select new { c.ID, c.Status };
+                            dataGridView1.DataSource = busca.ToList();
+                            dataGridView1.ClearSelection();
                         }
                     }
                 }
@@ -197,16 +214,18 @@ namespace AdvoGarcia.UC
                 Caso cc = cdao.BuscaPorID(Convert.ToInt32(dataGridView1.Rows[indiceC].Cells["ID"].Value));
                 cc.AdvogadoID = aaa.ID;
                 cdao.Atualizar();
-                MessageBox.Show("Caso Vinculado", "Atenção");
+                CustomMB.Show("Caso vinculado.", CustomMB.CorFundo.Verde);
                 if (txtNome.Text.Trim().Equals(string.Empty))
                 {
                     var buscaA = from cli in contexto.Clientes join c in contexto.Casos on cli.ID equals c.ClienteID where c.AdvogadoID == null && c.Status == "Andamento" select new { c.ID, c.Status, cli.Nome };
                     dataGridView1.DataSource = buscaA.ToList();
+                    dataGridView1.ClearSelection();
                 }
                 else
                 {
                     var buscaA = from cli in contexto.Clientes join c in contexto.Casos on cli.ID equals c.ClienteID where c.AdvogadoID == null && c.Status == "Andamento" && cli.Nome.Contains(txtNome.Text) select new { c.ID, c.Status, cli.Nome };
                     dataGridView1.DataSource = buscaA.ToList();
+                    dataGridView1.ClearSelection();
                 }
             }
             else
@@ -221,13 +240,14 @@ namespace AdvoGarcia.UC
                     Cliente = ccc
                 };
                 casodao.Salvar(caso);
-                MessageBox.Show("Caso Salvo", "Atenção");
+                CustomMB.Show("Caso cadastrado!", CustomMB.CorFundo.Verde);
                 if (cboAdv.Text.Equals("Possui advogado"))
                 {
                     if (chbAnd.Checked && chbEnc.Checked)
                     {
                         var busca = from c in contexto.Casos join cli in contexto.Clientes on c.ClienteID equals cli.ID join a in contexto.Advogados on c.AdvogadoID equals a.ID where c.ClienteID == ccc.ID select new { c.ID, c.Status, a.Nome };
                         dataGridView1.DataSource = busca.ToList();
+                        dataGridView1.ClearSelection();
                     }
                     else
                     {
@@ -235,11 +255,13 @@ namespace AdvoGarcia.UC
                         {
                             var busca = from c in contexto.Casos join cli in contexto.Clientes on c.ClienteID equals cli.ID join a in contexto.Advogados on c.AdvogadoID equals a.ID where c.ClienteID == ccc.ID && c.Status == "Andamento" select new { c.ID, c.Status, a.Nome };
                             dataGridView1.DataSource = busca.ToList();
+                            dataGridView1.ClearSelection();
                         }
                         if (chbEnc.Checked)
                         {
                             var busca = from c in contexto.Casos join cli in contexto.Clientes on c.ClienteID equals cli.ID join a in contexto.Advogados on c.AdvogadoID equals a.ID where c.ClienteID == ccc.ID && c.Status != "Andamento" select new { c.ID, c.Status, a.Nome };
                             dataGridView1.DataSource = busca.ToList();
+                            dataGridView1.ClearSelection();
                         }
                     }
                 }
@@ -249,6 +271,7 @@ namespace AdvoGarcia.UC
                     {
                         var busca = from c in contexto.Casos join cli in contexto.Clientes on c.ClienteID equals cli.ID where c.ClienteID == ccc.ID && c.AdvogadoID == null select new { c.ID, c.Status };
                         dataGridView1.DataSource = busca.ToList();
+                        dataGridView1.ClearSelection();
                     }
                     else
                     {
@@ -256,10 +279,13 @@ namespace AdvoGarcia.UC
                         {
                             var busca = from c in contexto.Casos join cli in contexto.Clientes on c.ClienteID equals cli.ID where c.ClienteID == ccc.ID && c.AdvogadoID == null && c.Status == "Andamento" select new { c.ID, c.Status };
                             dataGridView1.DataSource = busca.ToList();
+                            dataGridView1.ClearSelection();
                         }
                         if (chbEnc.Checked)
                         {
                             var busca = from c in contexto.Casos join cli in contexto.Clientes on c.ClienteID equals cli.ID where c.ClienteID == ccc.ID && c.AdvogadoID == null && c.Status != "Andamento" select new { c.ID, c.Status };
+                            dataGridView1.DataSource = busca.ToList();
+                            dataGridView1.ClearSelection();
                         }
                     }
                 }
@@ -290,7 +316,22 @@ namespace AdvoGarcia.UC
                 frm.ShowDialog();
                 if (frm.Alt)
                 {
-                    MessageBox.Show("Caso alterado", "Atenção");
+                    CustomMB.Show("Caso alterado!", CustomMB.CorFundo.Verde);
+                }
+            }
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dataGridView1.Columns[e.ColumnIndex].Name == "Status")
+            {
+                if (e.Value.Equals("Andamento"))
+                {
+                    e.CellStyle.BackColor = Color.Green;
+                }
+                else
+                {
+                    e.CellStyle.BackColor = Color.Crimson;
                 }
             }
         }

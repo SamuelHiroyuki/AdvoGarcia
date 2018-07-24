@@ -75,7 +75,7 @@ namespace AdvoGarcia.Telas
             {
                 if (txtCaso.Text.Trim().Equals(string.Empty))
                 {
-                    MessageBox.Show("Campos vazio!", "Atenção");
+                    CustomMB.Show("Os campos estão vazios!", CustomMB.CorFundo.Amarelo);
                 }
                 else
                 {
@@ -90,7 +90,7 @@ namespace AdvoGarcia.Telas
             {
                 if (txtCaso.Text.Trim().Equals(string.Empty))
                 {
-                    MessageBox.Show("Campos vazio!", "Atenção");
+                    CustomMB.Show("Os campos estão vazios!", CustomMB.CorFundo.Amarelo);
                 }
                 else
                 {

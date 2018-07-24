@@ -104,10 +104,10 @@
             // 
             // dateNasci
             // 
-            this.dateNasci.Location = new System.Drawing.Point(33, 331);
+            this.dateNasci.Location = new System.Drawing.Point(36, 331);
             this.dateNasci.MinimumSize = new System.Drawing.Size(0, 29);
             this.dateNasci.Name = "dateNasci";
-            this.dateNasci.Size = new System.Drawing.Size(235, 29);
+            this.dateNasci.Size = new System.Drawing.Size(232, 29);
             this.dateNasci.TabIndex = 56;
             // 
             // cboArea
@@ -139,7 +139,7 @@
             // 
             this.txtCPF.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtCPF.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtCPF.Location = new System.Drawing.Point(33, 201);
+            this.txtCPF.Location = new System.Drawing.Point(37, 201);
             this.txtCPF.Mask = "000,000,000-00";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(235, 23);
@@ -151,7 +151,7 @@
             // 
             // 
             this.txtEmail.CustomButton.Image = null;
-            this.txtEmail.CustomButton.Location = new System.Drawing.Point(478, 1);
+            this.txtEmail.CustomButton.Location = new System.Drawing.Point(474, 1);
             this.txtEmail.CustomButton.Name = "";
             this.txtEmail.CustomButton.Size = new System.Drawing.Size(21, 21);
             this.txtEmail.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -160,7 +160,7 @@
             this.txtEmail.CustomButton.UseSelectable = true;
             this.txtEmail.CustomButton.Visible = false;
             this.txtEmail.Lines = new string[0];
-            this.txtEmail.Location = new System.Drawing.Point(33, 268);
+            this.txtEmail.Location = new System.Drawing.Point(37, 268);
             this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
@@ -170,7 +170,7 @@
             this.txtEmail.SelectionStart = 0;
             this.txtEmail.ShortcutsEnabled = true;
             this.txtEmail.ShowClearButton = true;
-            this.txtEmail.Size = new System.Drawing.Size(500, 23);
+            this.txtEmail.Size = new System.Drawing.Size(496, 23);
             this.txtEmail.TabIndex = 55;
             this.txtEmail.UseSelectable = true;
             this.txtEmail.WaterMark = "Digite o email";
@@ -335,11 +335,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Emoji", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(33, 394);
+            this.label8.Location = new System.Drawing.Point(33, 384);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 19);
+            this.label8.Size = new System.Drawing.Size(83, 38);
             this.label8.TabIndex = 76;
-            this.label8.Text = "Preço/hora :";
+            this.label8.Text = "Preço/hora :\r\n(em reais)";
             // 
             // label9
             // 

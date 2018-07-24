@@ -68,7 +68,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Emoji", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(301, 355);
+            this.label9.Location = new System.Drawing.Point(301, 350);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(120, 19);
             this.label9.TabIndex = 101;
@@ -78,17 +78,17 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Emoji", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(33, 355);
+            this.label8.Location = new System.Drawing.Point(33, 340);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 19);
+            this.label8.Size = new System.Drawing.Size(83, 38);
             this.label8.TabIndex = 100;
-            this.label8.Text = "Preço/hora :";
+            this.label8.Text = "Preço/hora :\r\n(em reais)\r\n";
             // 
             // nudPrec
             // 
             this.nudPrec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nudPrec.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudPrec.Location = new System.Drawing.Point(122, 351);
+            this.nudPrec.Location = new System.Drawing.Point(122, 346);
             this.nudPrec.Name = "nudPrec";
             this.nudPrec.Size = new System.Drawing.Size(146, 27);
             this.nudPrec.TabIndex = 98;
@@ -98,7 +98,7 @@
             // 
             this.nudQtdC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nudQtdC.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudQtdC.Location = new System.Drawing.Point(427, 351);
+            this.nudQtdC.Location = new System.Drawing.Point(427, 346);
             this.nudQtdC.Name = "nudQtdC";
             this.nudQtdC.Size = new System.Drawing.Size(106, 27);
             this.nudQtdC.TabIndex = 99;
@@ -108,7 +108,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Emoji", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(301, 279);
+            this.label7.Location = new System.Drawing.Point(301, 269);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 19);
             this.label7.TabIndex = 97;
@@ -118,7 +118,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Emoji", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(301, 163);
+            this.label6.Location = new System.Drawing.Point(301, 151);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 19);
             this.label6.TabIndex = 96;
@@ -128,7 +128,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Emoji", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(33, 222);
+            this.label5.Location = new System.Drawing.Point(33, 212);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 19);
             this.label5.TabIndex = 95;
@@ -138,7 +138,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Emoji", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(33, 279);
+            this.label4.Location = new System.Drawing.Point(33, 269);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(138, 19);
             this.label4.TabIndex = 94;
@@ -148,7 +148,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Emoji", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(33, 163);
+            this.label3.Location = new System.Drawing.Point(33, 151);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 19);
             this.label3.TabIndex = 93;
@@ -158,7 +158,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Emoji", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 104);
+            this.label2.Location = new System.Drawing.Point(33, 91);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 19);
             this.label2.TabIndex = 92;
@@ -168,7 +168,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Emoji", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 44);
+            this.label1.Location = new System.Drawing.Point(33, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 19);
             this.label1.TabIndex = 91;
@@ -176,7 +176,7 @@
             // 
             // dateNasci
             // 
-            this.dateNasci.Location = new System.Drawing.Point(37, 301);
+            this.dateNasci.Location = new System.Drawing.Point(37, 291);
             this.dateNasci.MinimumSize = new System.Drawing.Size(0, 29);
             this.dateNasci.Name = "dateNasci";
             this.dateNasci.Size = new System.Drawing.Size(231, 29);
@@ -190,7 +190,7 @@
             "Direito Civil",
             "Direito Trabalhista",
             "Mediação"});
-            this.cboArea.Location = new System.Drawing.Point(304, 301);
+            this.cboArea.Location = new System.Drawing.Point(304, 291);
             this.cboArea.Name = "cboArea";
             this.cboArea.PromptText = "Área de Atuação";
             this.cboArea.Size = new System.Drawing.Size(229, 29);
@@ -201,7 +201,7 @@
             // 
             this.txtTel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtTel.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtTel.Location = new System.Drawing.Point(304, 185);
+            this.txtTel.Location = new System.Drawing.Point(304, 173);
             this.txtTel.Mask = "(00) 00000-0000";
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(229, 23);
@@ -211,7 +211,7 @@
             // 
             this.txtCPF.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtCPF.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtCPF.Location = new System.Drawing.Point(37, 185);
+            this.txtCPF.Location = new System.Drawing.Point(37, 173);
             this.txtCPF.Mask = "000,000,000-00";
             this.txtCPF.Name = "txtCPF";
             this.txtCPF.Size = new System.Drawing.Size(231, 23);
@@ -232,7 +232,7 @@
             this.txtEmail.CustomButton.UseSelectable = true;
             this.txtEmail.CustomButton.Visible = false;
             this.txtEmail.Lines = new string[0];
-            this.txtEmail.Location = new System.Drawing.Point(37, 244);
+            this.txtEmail.Location = new System.Drawing.Point(37, 234);
             this.txtEmail.MaxLength = 50;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
@@ -264,7 +264,7 @@
             this.txtEnd.CustomButton.UseSelectable = true;
             this.txtEnd.CustomButton.Visible = false;
             this.txtEnd.Lines = new string[0];
-            this.txtEnd.Location = new System.Drawing.Point(36, 126);
+            this.txtEnd.Location = new System.Drawing.Point(36, 114);
             this.txtEnd.MaxLength = 50;
             this.txtEnd.Name = "txtEnd";
             this.txtEnd.PasswordChar = '\0';
@@ -296,7 +296,7 @@
             this.txtNome.CustomButton.UseSelectable = true;
             this.txtNome.CustomButton.Visible = false;
             this.txtNome.Lines = new string[0];
-            this.txtNome.Location = new System.Drawing.Point(36, 66);
+            this.txtNome.Location = new System.Drawing.Point(36, 53);
             this.txtNome.MaxLength = 50;
             this.txtNome.Name = "txtNome";
             this.txtNome.PasswordChar = '\0';

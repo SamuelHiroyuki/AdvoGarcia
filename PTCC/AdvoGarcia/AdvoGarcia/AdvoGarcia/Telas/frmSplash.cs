@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace AdvoGarcia.Telas
 {
     public partial class frmSplash : Form
     {
+
         public frmSplash()
         {
             InitializeComponent();

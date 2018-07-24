@@ -27,7 +27,7 @@ namespace AdvoGarcia.Telas
         {
             if (txtUser.Text.Trim().Equals(string.Empty) || txtPass.Text.Trim().Equals(string.Empty))
             {
-                MessageBox.Show("Campos vazio!","Atenção");
+                CustomMB.Show("Os campos estão vazios!", CustomMB.CorFundo.Amarelo);
             }
             else
             {
