@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdvoGarcia.DAO;
 using AdvoGarcia.Entidades;
 using AdvoGarcia.UC;
 
@@ -21,6 +22,8 @@ namespace AdvoGarcia.Telas
         int min = 0, seg = 0;
         Advogado al;
         Cliente cl;
+        AdvogadoDAO adao = new AdvogadoDAO();
+        ClienteDAO cdao = new ClienteDAO();
 
         public frmMain()
         {
@@ -41,6 +44,7 @@ namespace AdvoGarcia.Telas
             }
             catch (Exception)
             { }
+            picNot.Visible = false;
         }
 
         public frmMain(Cliente c)
@@ -56,6 +60,11 @@ namespace AdvoGarcia.Telas
             }
             catch (Exception)
             { }
+            picNot.Visible = false;
+            btnConsulta.Enabled = false;
+            btnCadA.Enabled = false;
+            btnCadC.Enabled = false;
+            btnCli.Enabled = false;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -92,18 +101,19 @@ namespace AdvoGarcia.Telas
 
         private void btnAltD_Click(object sender, EventArgs e)
         {
+            picNot.Visible = true;
             LimparLat();
             lat3.BackColor = Color.FromArgb(0, 65, 82);
             pnlMostrar.Controls.Clear();
             if (al != null) {
-                ucAltA uc = new ucAltA(al);
+                ucAltA uc = new ucAltA(al.ID);
                 pnlMostrar.Controls.Add(uc);
                 pnlMostrar.BringToFront();
                 uc.Show();
             }
             else
             {
-                ucAltC uc = new ucAltC(cl);
+                ucAltC uc = new ucAltC(cl.ID);
                 pnlMostrar.Controls.Add(uc);
                 pnlMostrar.BringToFront();
                 uc.Show();
@@ -161,6 +171,77 @@ namespace AdvoGarcia.Telas
             pnlMostrar.Controls.Add(uc);
             pnlMostrar.BringToFront();
             uc.Show();
+            picNot.Visible = true;
+        }
+
+        private void btnCli_Click(object sender, EventArgs e)
+        {
+            LimparLat();
+            lat4.BackColor = Color.FromArgb(0, 65, 82);
+            pnlMostrar.Controls.Clear();
+            ucConCli uc = new ucConCli(al);
+            pnlMostrar.Controls.Add(uc);
+            pnlMostrar.BringToFront();
+            uc.Show();
+        }
+
+        private void picRefresh_Click(object sender, EventArgs e)
+        {
+            if (al != null)
+            {
+                al = adao.BuscaPorID(al.ID);
+                lblNome.Text = al.Nome;
+                lblEmail.Text = al.Email;
+                lblCargo.Text = "Advogado - " + al.Especializacao;
+                try
+                {
+                    picPerfil.BackgroundImage = Image.FromFile(al.Foto);
+                }
+                catch (Exception)
+                { }
+            }
+            else
+            {
+                cl = cdao.BuscaPorID(cl.ID);
+                lblNome.Text = cl.Nome;
+                lblEmail.Text = cl.Email;
+                lblCargo.Text = "Cliente - nº" + cl.ID;
+                try
+                {
+                    picPerfil.BackgroundImage = Image.FromFile(cl.Foto);
+                }
+                catch (Exception)
+                { }
+            }
+            picNot.Visible = false;
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            LimparLat();
+            pnlMostrar.Controls.Clear();
+            pictureBox2.BringToFront();
+        }
+
+        private void btnCaso_Click(object sender, EventArgs e)
+        {
+            LimparLat();
+            lat5.BackColor = Color.FromArgb(0, 65, 82);
+            pnlMostrar.Controls.Clear();
+            if (al != null)
+            {
+                ucConCaso uc = new ucConCaso(al);
+                pnlMostrar.Controls.Add(uc);
+                pnlMostrar.BringToFront();
+                uc.Show();
+            }
+            else
+            {
+                ucConCaso uc = new ucConCaso(cl);
+                pnlMostrar.Controls.Add(uc);
+                pnlMostrar.BringToFront();
+                uc.Show();
+            }
         }
 
         public void LimparLat() {

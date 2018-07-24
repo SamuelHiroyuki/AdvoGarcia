@@ -64,7 +64,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(168)))), ((int)(((byte)(1)))));
             this.btnEdit.FlatAppearance.BorderSize = 0;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -75,12 +75,13 @@
             this.btnEdit.TabIndex = 80;
             this.btnEdit.Text = "Editar";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Emoji", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(707, 68);
+            this.label7.Location = new System.Drawing.Point(707, 157);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(75, 19);
             this.label7.TabIndex = 83;
@@ -90,7 +91,7 @@
             // 
             this.cboTipoCon.FormattingEnabled = true;
             this.cboTipoCon.ItemHeight = 23;
-            this.cboTipoCon.Location = new System.Drawing.Point(700, 90);
+            this.cboTipoCon.Location = new System.Drawing.Point(700, 179);
             this.cboTipoCon.Name = "cboTipoCon";
             this.cboTipoCon.PromptText = "Deseja consultar...";
             this.cboTipoCon.Size = new System.Drawing.Size(171, 29);
@@ -101,7 +102,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Emoji", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(707, 142);
+            this.label1.Location = new System.Drawing.Point(706, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 19);
             this.label1.TabIndex = 84;
@@ -122,11 +123,10 @@
             this.txtNome.CustomButton.UseSelectable = true;
             this.txtNome.CustomButton.Visible = false;
             this.txtNome.Lines = new string[0];
-            this.txtNome.Location = new System.Drawing.Point(700, 164);
+            this.txtNome.Location = new System.Drawing.Point(699, 120);
             this.txtNome.MaxLength = 50;
             this.txtNome.Name = "txtNome";
             this.txtNome.PasswordChar = '\0';
-            this.txtNome.PromptText = "Digite o nome";
             this.txtNome.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtNome.SelectedText = "";
             this.txtNome.SelectionLength = 0;

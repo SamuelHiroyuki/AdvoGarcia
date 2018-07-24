@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdvoGarcia.Telas;
+using static AdvoGarcia.Telas.CustomMB;
 
 namespace AdvoGarcia
 {
@@ -17,7 +18,7 @@ namespace AdvoGarcia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSplash());
+            Application.Run(new CustomMB(CorFundo.Verde));
         }
     }
 }

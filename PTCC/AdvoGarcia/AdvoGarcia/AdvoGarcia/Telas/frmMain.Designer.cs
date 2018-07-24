@@ -36,7 +36,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlLeft = new System.Windows.Forms.Panel();
-            this.btnMenu = new System.Windows.Forms.PictureBox();
+            this.btnHome = new System.Windows.Forms.PictureBox();
             this.btnLogoff = new System.Windows.Forms.Button();
             this.lat5 = new System.Windows.Forms.Panel();
             this.lat4 = new System.Windows.Forms.Panel();
@@ -51,6 +51,8 @@
             this.btnCadC = new System.Windows.Forms.Button();
             this.btnCadA = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picRefresh = new System.Windows.Forms.PictureBox();
+            this.picNot = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTempo = new System.Windows.Forms.Label();
             this.lblCargo = new System.Windows.Forms.Label();
@@ -63,13 +65,16 @@
             this.pnlCentral = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlMostrar = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.pnlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlLeft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRefresh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNot)).BeginInit();
             this.pnlCentral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -134,7 +139,7 @@
             // pnlLeft
             // 
             this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(34)))), ((int)(((byte)(39)))));
-            this.pnlLeft.Controls.Add(this.btnMenu);
+            this.pnlLeft.Controls.Add(this.btnHome);
             this.pnlLeft.Controls.Add(this.btnLogoff);
             this.pnlLeft.Controls.Add(this.lat5);
             this.pnlLeft.Controls.Add(this.lat4);
@@ -154,17 +159,18 @@
             this.pnlLeft.Size = new System.Drawing.Size(189, 590);
             this.pnlLeft.TabIndex = 1;
             // 
-            // btnMenu
+            // btnHome
             // 
-            this.btnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnMenu.Image")));
-            this.btnMenu.Location = new System.Drawing.Point(143, 8);
-            this.btnMenu.Name = "btnMenu";
-            this.btnMenu.Size = new System.Drawing.Size(43, 37);
-            this.btnMenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.btnMenu.TabIndex = 13;
-            this.btnMenu.TabStop = false;
+            this.btnHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
+            this.btnHome.Location = new System.Drawing.Point(140, 9);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(43, 37);
+            this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.btnHome.TabIndex = 13;
+            this.btnHome.TabStop = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // btnLogoff
             // 
@@ -242,6 +248,7 @@
             this.btnCaso.TabIndex = 8;
             this.btnCaso.Text = "Casos";
             this.btnCaso.UseVisualStyleBackColor = true;
+            this.btnCaso.Click += new System.EventHandler(this.btnCaso_Click);
             // 
             // btnCli
             // 
@@ -255,6 +262,7 @@
             this.btnCli.TabIndex = 7;
             this.btnCli.Text = "Clientes";
             this.btnCli.UseVisualStyleBackColor = true;
+            this.btnCli.Click += new System.EventHandler(this.btnCli_Click);
             // 
             // btnAltD
             // 
@@ -315,6 +323,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(56)))), ((int)(((byte)(68)))));
+            this.panel1.Controls.Add(this.picRefresh);
+            this.panel1.Controls.Add(this.picNot);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblTempo);
             this.panel1.Controls.Add(this.lblCargo);
@@ -326,6 +336,29 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(871, 99);
             this.panel1.TabIndex = 2;
+            // 
+            // picRefresh
+            // 
+            this.picRefresh.Image = ((System.Drawing.Image)(resources.GetObject("picRefresh.Image")));
+            this.picRefresh.Location = new System.Drawing.Point(5, 72);
+            this.picRefresh.Name = "picRefresh";
+            this.picRefresh.Size = new System.Drawing.Size(18, 18);
+            this.picRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRefresh.TabIndex = 14;
+            this.picRefresh.TabStop = false;
+            this.toolTip1.SetToolTip(this.picRefresh, "Clique aqui para atualizar");
+            this.picRefresh.Click += new System.EventHandler(this.picRefresh_Click);
+            // 
+            // picNot
+            // 
+            this.picNot.Image = ((System.Drawing.Image)(resources.GetObject("picNot.Image")));
+            this.picNot.Location = new System.Drawing.Point(0, 15);
+            this.picNot.Name = "picNot";
+            this.picNot.Size = new System.Drawing.Size(20, 20);
+            this.picNot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picNot.TabIndex = 13;
+            this.picNot.TabStop = false;
+            this.toolTip1.SetToolTip(this.picNot, "As informações podem estar desatualizadas");
             // 
             // label1
             // 
@@ -356,7 +389,7 @@
             this.lblCargo.AutoSize = true;
             this.lblCargo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCargo.ForeColor = System.Drawing.Color.LightGray;
-            this.lblCargo.Location = new System.Drawing.Point(91, 71);
+            this.lblCargo.Location = new System.Drawing.Point(108, 73);
             this.lblCargo.Name = "lblCargo";
             this.lblCargo.Size = new System.Drawing.Size(45, 16);
             this.lblCargo.TabIndex = 10;
@@ -367,18 +400,18 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.LightGray;
-            this.lblEmail.Location = new System.Drawing.Point(98, 42);
+            this.lblEmail.Location = new System.Drawing.Point(108, 44);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(97, 16);
+            this.lblEmail.Size = new System.Drawing.Size(46, 16);
             this.lblEmail.TabIndex = 9;
-            this.lblEmail.Text = "Apellidos User";
+            this.lblEmail.Text = "E-mail";
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNome.ForeColor = System.Drawing.Color.LightGray;
-            this.lblNome.Location = new System.Drawing.Point(91, 13);
+            this.lblNome.Location = new System.Drawing.Point(108, 15);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(67, 16);
             this.lblNome.TabIndex = 8;
@@ -401,10 +434,10 @@
             this.picPerfil.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picPerfil.Enabled = false;
             this.picPerfil.FillColor = System.Drawing.Color.LightGray;
-            this.picPerfil.Location = new System.Drawing.Point(15, 15);
+            this.picPerfil.Location = new System.Drawing.Point(15, 9);
             this.picPerfil.Name = "picPerfil";
             this.picPerfil.SelectionColor = System.Drawing.Color.LightGray;
-            this.picPerfil.Size = new System.Drawing.Size(70, 70);
+            this.picPerfil.Size = new System.Drawing.Size(85, 85);
             // 
             // tmrTempLog
             // 
@@ -468,9 +501,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlLeft.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRefresh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picNot)).EndInit();
             this.pnlCentral.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -507,10 +542,13 @@
         private System.Windows.Forms.Label lblTempo;
         private System.Windows.Forms.Timer tmrTempLog;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox btnMenu;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.Panel pnlCentral;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox btnHome;
+        private System.Windows.Forms.PictureBox picNot;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.PictureBox picRefresh;
         private System.Windows.Forms.Panel pnlMostrar;
     }
 }

@@ -19,10 +19,11 @@ namespace AdvoGarcia.UC
         Cliente c;
         ClienteDAO cdao = new ClienteDAO();
 
-        public ucAltC(Cliente c)
+        public ucAltC(int id)
         {
-            this.c = c;
+            this.c = cdao.BuscaPorID(id);
             InitializeComponent();
+            Carregar();
         }
 
         private void btnSave_Click(object sender, EventArgs e)

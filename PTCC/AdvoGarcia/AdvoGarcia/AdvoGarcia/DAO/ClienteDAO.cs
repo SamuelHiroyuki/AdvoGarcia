@@ -33,6 +33,11 @@ namespace AdvoGarcia.DAO
             contexto.SaveChanges();
         }
 
+        public Cliente BuscaPorID(int id)
+        {
+            return contexto.Clientes.FirstOrDefault(c => c.ID == id);
+        }
+
         public bool Verificar(string User, string Pass)
         {
             if (contexto.Clientes.FirstOrDefault(c => c.User.Equals(User) && c.Pass.Equals(Pass)) == null)

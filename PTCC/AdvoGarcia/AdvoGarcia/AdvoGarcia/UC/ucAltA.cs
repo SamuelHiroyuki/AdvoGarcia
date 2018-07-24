@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdvoGarcia.Entidades;
 using AdvoGarcia.DAO;
+using AdvoGarcia.Telas;
 
 namespace AdvoGarcia.UC
 {
@@ -19,9 +20,9 @@ namespace AdvoGarcia.UC
         Advogado a;
         AdvogadoDAO adao = new AdvogadoDAO();
 
-        public ucAltA(Advogado a)
+        public ucAltA(int id)
         {
-            this.a = a;
+            this.a = adao.BuscaPorID(id);
             InitializeComponent();
             Carregar();
         }
@@ -58,6 +59,7 @@ namespace AdvoGarcia.UC
                     {
                         adao.Atualizar();
                         MessageBox.Show("Advogado atualizado", "Sucesso");
+                        this.Dispose();
                     }
                 }
                 else

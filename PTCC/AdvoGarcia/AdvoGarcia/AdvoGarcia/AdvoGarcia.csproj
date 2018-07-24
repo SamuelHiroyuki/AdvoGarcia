@@ -158,6 +158,18 @@
     <Compile Include="Migrations\EntidadesContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Telas\CustomMB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\CustomMB.Designer.cs">
+      <DependentUpon>CustomMB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmAlt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmAlt.Designer.cs">
+      <DependentUpon>frmAlt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +224,18 @@
     <Compile Include="UC\ucCli.Designer.cs">
       <DependentUpon>ucCli.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC\ucConCaso.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucConCaso.Designer.cs">
+      <DependentUpon>ucConCaso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC\ucConCli.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC\ucConCli.Designer.cs">
+      <DependentUpon>ucConCli.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC\ucConsulta.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -227,6 +251,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Telas\CustomMB.resx">
+      <DependentUpon>CustomMB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmAlt.resx">
+      <DependentUpon>frmAlt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Telas\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,6 +283,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC\ucCli.resx">
       <DependentUpon>ucCli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucConCaso.resx">
+      <DependentUpon>ucConCaso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC\ucConCli.resx">
+      <DependentUpon>ucConCli.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC\ucConsulta.resx">
       <DependentUpon>ucConsulta.cs</DependentUpon>

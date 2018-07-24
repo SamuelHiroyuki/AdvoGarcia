@@ -121,6 +121,15 @@ namespace AdvoGarcia.Telas
                         frmMain main = new frmMain(cdao.Logado(txtUser.Text, txtPass.Text));
                         main.ShowDialog();
                     }
+                    else
+                    {
+                        this.ActiveControl = null;
+                        lineShape1.BorderColor = Color.FromArgb(217, 19, 39);
+                        lineShape1.SelectionColor = Color.FromArgb(217, 19, 39);
+                        lineShape2.BorderColor = Color.FromArgb(217, 19, 39);
+                        lineShape2.SelectionColor = Color.FromArgb(217, 19, 39);
+                        MessageBox.Show("Dados incorretos!", "Atenção");
+                    }
                 }
             }
         }

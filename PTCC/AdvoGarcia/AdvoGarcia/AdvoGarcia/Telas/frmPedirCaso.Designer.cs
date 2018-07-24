@@ -32,6 +32,9 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.txtCaso = new System.Windows.Forms.RichTextBox();
+            this.btnEnc = new System.Windows.Forms.Button();
+            this.btnCan = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,6 +84,54 @@
             this.txtCaso.TabIndex = 109;
             this.txtCaso.Text = "";
             // 
+            // btnEnc
+            // 
+            this.btnEnc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
+            this.btnEnc.FlatAppearance.BorderSize = 0;
+            this.btnEnc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnc.ForeColor = System.Drawing.Color.White;
+            this.btnEnc.Location = new System.Drawing.Point(276, 393);
+            this.btnEnc.Name = "btnEnc";
+            this.btnEnc.Size = new System.Drawing.Size(100, 35);
+            this.btnEnc.TabIndex = 110;
+            this.btnEnc.Text = "Encerrar";
+            this.btnEnc.UseVisualStyleBackColor = false;
+            this.btnEnc.Visible = false;
+            this.btnEnc.Click += new System.EventHandler(this.btnEnc_Click);
+            // 
+            // btnCan
+            // 
+            this.btnCan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
+            this.btnCan.FlatAppearance.BorderSize = 0;
+            this.btnCan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCan.ForeColor = System.Drawing.Color.White;
+            this.btnCan.Location = new System.Drawing.Point(409, 393);
+            this.btnCan.Name = "btnCan";
+            this.btnCan.Size = new System.Drawing.Size(100, 35);
+            this.btnCan.TabIndex = 111;
+            this.btnCan.Text = "Cancelar";
+            this.btnCan.UseVisualStyleBackColor = false;
+            this.btnCan.Visible = false;
+            this.btnCan.Click += new System.EventHandler(this.btnCan_Click);
+            // 
+            // btnOk
+            // 
+            this.btnOk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
+            this.btnOk.FlatAppearance.BorderSize = 0;
+            this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOk.ForeColor = System.Drawing.Color.White;
+            this.btnOk.Location = new System.Drawing.Point(276, 393);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(233, 35);
+            this.btnOk.TabIndex = 112;
+            this.btnOk.Text = "OK";
+            this.btnOk.UseVisualStyleBackColor = false;
+            this.btnOk.Visible = false;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
+            // 
             // frmPedirCaso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -90,6 +141,9 @@
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnEnc);
+            this.Controls.Add(this.btnCan);
+            this.Controls.Add(this.btnOk);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPedirCaso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -104,5 +158,8 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClear;
         public System.Windows.Forms.RichTextBox txtCaso;
+        private System.Windows.Forms.Button btnEnc;
+        private System.Windows.Forms.Button btnCan;
+        private System.Windows.Forms.Button btnOk;
     }
 }
